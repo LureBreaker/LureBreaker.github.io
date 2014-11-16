@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+<link href="css/nv.d3.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="css/sequences.css" rel="stylesheet" media="screen">
+<style>
+
+body {
+  overflow-y:scroll;
+}
+
+text {
+  font: 12px sans-serif;
+}
+
+#chart1 {
+  margin: 10px;
+  min-width: 100px;
+  min-height: 100px;
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
+}
+
+#chart1 svg {
+  height: 500px;
+}
+
+</style>
+<head>
+	<title>Team Wiz: Number of visitors of Singapore</title>
+</head>
+<body>
+	<div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Team DataWiz</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+	<div class="container-fluid carousel">
+			
+		<div id="myCarousel" class="carousel slide">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<!-- Carousel items -->
+			<div class="carousel-inner">
+				<div class="active item">
+					<h3>&nbsp;&nbsp;&nbsp;&nbsp;Total number of visitors 2009 - 2013</h3>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="row">
+						<div class="span9">
+						  <div id="chart1" class='with-3d-shadow with-transitions'>
+							<svg></svg>
+						  </div>
+						</div>
+						<div class="span6">
+							<p>The diagram shows the total number of visitors over the year. <b>Please click the bar to see further information of the visitor expenditure in Singapore </b></p>
+							<button type="button" class="btn btn-primary" data-loading-text="Loading..." id="change">change data</button>
+							<button type="button" class="btn btn-primary" data-loading-text="Loading..." id="change2">change back</button>
+							<h4 id="transportationMode">Indonesian mode of transport in 2012</h4>
+							<svg id="transportationModePie" class="mypiechart" style="height: 500px; width: 1200px;"></svg>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<h3>&nbsp;&nbsp;&nbsp;&nbsp;Expenditure Breakdown of each country visitor in Singapore</h3>
+					<!--<svg id="expenditureLineChart" class="mypiechartLC"></svg> 
+					<div id="expenditureLineChart" >
+						<svg style="height: 500px; width: 1200px;"></svg>
+					</div> -->
+					<!--sun burst -->
+					<div id="main">
+					  <div id="sequence"></div>
+					  <div id="chartExpenditureBD">
+						<div id="explanation" style="visibility: hidden;">
+						  <span id="percentage"></span><br/>
+						  of visits begin with this sequence of pages
+						</div>
+					  </div>
+					</div>
+					<div id="sidebar">
+					  <input type="checkbox" id="togglelegend"> Legend<br/>
+					  <div id="legend" style="visibility: hidden;"></div>
+					</div>
+				</div>
+				<div class="item">
+				<img alt="" src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-02.jpg"></img>
+					<div class="carousel-caption">
+						<h4>
+							First Thumbnail label
+						</h4>
+						<p>
+							Cras justo odio, dapibus ac facilisis in, egestas …
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- Carousel nav -->
+			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</div>
+	</div>
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap-transition.js"></script>
+<script src="js/bootstrap-alert.js"></script>
+<script src="js/bootstrap-modal.js"></script>
+<script src="js/bootstrap-dropdown.js"></script>
+<script src="js/bootstrap-scrollspy.js"></script>
+<script src="js/bootstrap-tab.js"></script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap-popover.js"></script>
+<script src="js/bootstrap-button.js"></script>
+<script src="js/bootstrap-collapse.js"></script>
+<script src="js/bootstrap-carousel.js"></script>
+<script src="js/bootstrap-typeahead.js"></script>
+<script src="js/d3.v3.js"></script>
+<script src="js/nv.d3.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/tooltip.js"></script>
+<script src="js/legend.js"></script>
+<script src="js/axis.js"></script>
+<script src="js/multiBarHorizontal.js"></script>
+<script src="js/multiBarHorizontalChart.js"></script>
+<script src="js/pie.js"></script>
+<script src="js/pieChart.js"></script>
+<script src="js/stream_layers.js"></script>
+<script src="js/record.js"></script>
+<script src="js/interactiveLayer.js"></script>
+<script src="js/scatter.js"></script>
+<script src="js/line.js"></script>
+<script src="js/lineChart.js"></script>
+<script src="js/sequences.js"></script>
+<script>
+
+
+$(document).ready(function(){
+	$('.carousel').carousel('pause');
+});
+
+var chart;
+nv.addGraph(function() {
+  chart = nv.models.multiBarHorizontalChart()
+      .x(function(d) { return d.label })
+      .y(function(d) { return d.value })
+      .margin({top: 30, right: 20, bottom: 50, left: 175})
+      .showValues(true)
+      //.tooltips(false)
+      .barColor(d3.scale.category20().range())
+      .transitionDuration(250)
+      .stacked(true)
+      .showControls(false);
+
+  chart.yAxis
+      .tickFormat(d3.format(',.2f'));
+
+  d3.select('#chart1 svg')
+      .datum(number_visitor_data)
+      .call(chart);
+
+  nv.utils.windowResize(chart.update);
+
+  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+  
+  //click the bar to check the value inside it
+  chart.multibar.dispatch.on("elementClick", function(e) {
+    //console.log(e.point.label);
+	//console.log(e.series.key);
+	//alert(window[e.point.label+e.series.key]);
+   findCountryTransportation(e.point.label+e.series.key);
+   
+	
+	//d3.select('#expenditureLineChart svg').call(chart2);
+	//$('.carousel').carousel(1);
+	//$('.carousel').carousel('pause');
+  });
+  
+  return chart;
+});
+
+$("#change").on("click",function(){
+	d3.select('#chart1 svg')
+      .datum(long_short_data2)
+      .call(chart);
+});
+
+$("#change2").on("click",function(){
+	d3.select('#chart1 svg')
+      .datum(number_visitor_data)
+      .call(chart);
+});
+
+//pie chart generation js
+var chart3;
+nv.addGraph(function() {
+    var width = 500,
+        height = 500;
+
+    var chart3 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
+
+      d3.select("#transportationModePie")
+          .datum(Indonesia2012)
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart3);
+
+    chart3.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+    return chart3;
+});
+
+//line chart
+var chart2;
+nv.addGraph(function() {
+  chart2 = nv.models.lineChart()
+  .options({
+    margin: {left: 100, bottom: 100},
+    x: function(d,i) { return i},
+    showXAxis: true,
+    showYAxis: true,
+    transitionDuration: 100
+  })
+  ;
+
+  // chart sub-models (ie. xAxis, yAxis, etc) when accessed directly, return themselves, not the parent chart, so need to chain separately
+  chart2.xAxis
+    .axisLabel("Year")
+    .tickFormat(d3.format(',.1f'));
+
+  chart2.yAxis
+    .axisLabel('SGD')
+    .tickFormat(d3.format(',.2f'))
+    ;
+
+  d3.select('#expenditureLineChart svg')
+    .datum(sinAndCos())
+    .call(chart2);
+
+  //TODO: Figure out a good way to do this automatically
+  nv.utils.windowResize(chart2.update);
+  //nv.utils.windowResize(function() { d3.select('#expenditureLineChart svg').call(chart2) });
+
+  chart2.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+  return chart2;
+});
+
+function sinAndCos() {
+  var sin = [],
+    cos = [],
+    rand = [],
+    rand2 = []
+    ;
+
+  for (var i = 0; i < 100; i++) {
+    cos.push({x: i, y: i});
+  }
+
+  return [
+    {
+      values: cos,
+      key: "Cosine Wave",
+      color: "#2ca02c"
+    }
+  ];
+}
+
+function findCountryTransportation(countryYear){
+	nv.addGraph(function() {
+    var width = 500,
+        height = 500;
+
+    var chart3 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
+
+      d3.select("#transportationModePie")
+          .datum(window[countryYear])
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart3);
+
+    chart3.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+    return chart3;
+});
+}
+
+</script>
+</html>
