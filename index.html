@@ -75,7 +75,7 @@ text {
 						</div>
 						<div class="span6">
 							<p>The diagram shows the total number of visitors over the year. <b>Please click the bar to see further information of the visitor expenditure in Singapore </b></p>
-							<h4 id="transportationMode"><span id="countryName">Indonesia </span>visitor mode of transport in year <span id="countryYear">2012</span></h4>
+							<h4 id="transportationMode"><span id="countryName">Indonesia </span> visitor mode of transport in year <span id="countryYear">2012</span></h4>
 							<svg id="transportationModePie" class="mypiechart" style="height: 500px; width: 1200px;"></svg>
 						</div>
 					</div>
@@ -90,18 +90,21 @@ text {
 						<svg style="height: 500px; width: 1200px;"></svg>
 					</div>
 					</div>
-					
+					<br />
+					<div class="span12"><h4>&nbsp;&nbsp;&nbsp;&nbsp;Please select the country to check their expenditure breakdown:</h4></div>
 					<div class="span14 offset1">
-								<img src="img/indonesia.png" style="width: 100px;height:75px;" class="img-polaroid">
-								<img src="img/china.png" style="width: 100px;height:75px;" class="img-polaroid">
-								<img src="img/malaysia.png" style="width: 100px;height:75px;" class="img-polaroid">
-								<img src="img/australia.png" style="width: 100px;height:75px;" class="img-polaroid">
-								<img src="img/india.jpg" style="width: 100px;height:75px;" class="img-polaroid">
-								<img src="img/japan.png" style="width: 100px;height:75px;" class="img-polaroid">
-								<img src="img/philippines.png" style="width: 100px;height:75px;" class="img-polaroid">
-								<img src="img/UK.png" style="width: 100px;height:75px;" class="img-polaroid">
-								<img src="img/USA.png" style="width: 100px;height:75px;" class="img-polaroid">
-								<img src="img/thailand.png" style="width: 100px;height:75px;" class="img-polaroid">
+							
+								<img src="img/australia.png" style="width: 100px;height:75px;" id="aus" alt="Australia" class="img-polaroid flag">
+								<img src="img/china.png" style="width: 100px;height:75px;" id="chi" alt="China" class="img-polaroid flag">
+								<img src="img/india.jpg" style="width: 100px;height:75px;" id="ind" alt="India" class="img-polaroid flag">
+								<img src="img/indonesia.png" style="width: 100px;height:75px;" id="indo" alt="Indonesia" class="img-polaroid flag">
+								<img src="img/japan.png" style="width: 100px;height:75px;" id="jp" alt="Japan" class="img-polaroid flag">
+								<img src="img/malaysia.png" style="width: 100px;height:75px;" id="my" alt="Malaysia" class="img-polaroid flag">
+								<img src="img/philippines.png" style="width: 100px;height:75px;" id="ph" alt="Philippines" class="img-polaroid flag">
+								<img src="img/thailand.png" style="width: 100px;height:75px;" id="th" alt="Thailand" class="img-polaroid flag">
+								<img src="img/UK.png" style="width: 100px;height:75px;" id="uk" alt="UK" class="img-polaroid flag">
+								<img src="img/USA.png" style="width: 100px;height:75px;" id="usa" alt="USA" class="img-polaroid flag">
+						
 					</div>
 				</div>
 				
@@ -113,10 +116,11 @@ text {
 						<div class="span10">
 						  <div id="sequence"></div>
 						  <div id="chartExpenditureBD">
-							<div id="explanation" style="visibility: hidden;">
+						  
+							<!--<div id="explanation" style="visibility: hidden;">
 							  <span id="percentage"></span><br/>
 							  of visits begin with this sequence of pages
-							</div>
+							</div>-->
 						  </div>
 						</div>
 						<div class="span2">
@@ -275,24 +279,23 @@ nv.addGraph(function() {
 var chart2;
 nv.addGraph(function() {
   chart2 = nv.models.lineChart()
+  .useInteractiveGuideline(true)
+  .forceY([50000,1000000])
   .options({
-    margin: {left: 100, bottom: 100},
-    x: function(d,i) { return i},
-    showXAxis: true,
-	useInteractiveGuideline: true,
+	showXAxis: true,
     showYAxis: true,
-    transitionDuration: 100
+    transitionDuration: 250
   })
   ;
 
   // chart sub-models (ie. xAxis, yAxis, etc) when accessed directly, return themselves, not the parent chart, so need to chain separately
   chart2.xAxis
     .axisLabel("Year (2009 - 2013)")
-    .tickFormat(d3.format(',.2f'));
+    .tickFormat(d3.format('d'));
 
   chart2.yAxis
     .axisLabel('SGD')
-    .tickFormat(d3.format(',.2f'))
+    .tickFormat(d3.format(',2f'))
     ;
 
   d3.select('#expenditureLineChart svg')
@@ -333,6 +336,8 @@ function findCountryTransportation(countryYear){
     return chart3;
 });
 }
+
+
 
 </script>
 </html>

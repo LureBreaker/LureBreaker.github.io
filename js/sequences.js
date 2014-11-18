@@ -48,7 +48,7 @@ d3.text("csv/visit-sequences.csv", function(text) {
 
 // Main function to draw and set up the visualization, once we have the data.
 function createVisualization(json) {
-
+	//console.log(json);
   // Basic setup of page elements.
   initializeBreadcrumbTrail();
   drawLegend();
@@ -302,5 +302,27 @@ function buildHierarchy(csv) {
       }
     }
   }
+  //alert(root);
   return root;
 };
+
+$(".flag").click(function(){
+	$("#chartExpenditureBD").empty();
+	$("#legend").empty();
+	//$("#chartExpenditureBD").append("<svg></svg>");
+	
+	
+vis = d3.select("#chartExpenditureBD").append("svg:svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("svg:g")
+    .attr("id", "container")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+	
+	d3.text("csv/visit-sequences2.csv", function(text2) {
+	  var csv = d3.csv.parseRows(text2);
+	  var json = buildHierarchy(csv);
+	  createVisualization(json);
+	});
+});
