@@ -9,7 +9,7 @@ number_visitor_data =
         "value" : 1745330
       } , 
       { 
-        "label" : "PRChina" ,
+        "label" : "China" ,
         "value" : 936747
       } , 
       { 
@@ -55,7 +55,7 @@ number_visitor_data =
         "value" : 2306243
       } , 
       { 
-        "label" : "PRChina" ,
+        "label" : "China" ,
         "value" : 1171493
       } , 
       { 
@@ -100,7 +100,7 @@ number_visitor_data =
         "value" : 2592222
       } , 
       { 
-        "label" : "PRChina" ,
+        "label" : "China" ,
         "value" : 1577522
       } , 
       { 
@@ -145,7 +145,7 @@ number_visitor_data =
         "value" : 2837537
       } , 
       { 
-        "label" : "PRChina" ,
+        "label" : "China" ,
         "value" : 2034177
       } , 
       { 
@@ -190,7 +190,7 @@ number_visitor_data =
         "value" : 3088859
       } , 
       { 
-        "label" : "PRChina" ,
+        "label" : "China" ,
         "value" : 2269870
       } , 
       { 
@@ -242,7 +242,7 @@ long_short_data2 =
         "value" : 20
       } , 
       { 
-        "label" : "P R China" ,
+        "label" : "China" ,
         "value" : 12
       } , 
       { 
@@ -336,7 +336,7 @@ var Indonesia2012 = [
     }
   ];
   
-var PRChina2012 = [
+var China2012 = [
     {
       key: "Air",
       y: 1455978
@@ -349,4 +349,29 @@ var PRChina2012 = [
       key: "Land",
       y: 515847
     }
+  ];
+  
+  var expenditure = [
+	{
+		"key":"Indonesia",
+		"color": "#d67777",
+		"values": [
+			{ x: "2013" , y:"100000"},
+			{ x: "2012" , y:"150000"},
+			{ x: "2011" , y:"200000"},
+			{ x: "2010" , y:"250000"},
+			{ x: "2009" , y:"300000"}
+		]
+	},
+	{
+		"key":"Malaysia",
+		"color": "#d86666",
+		"values": [
+			{ x: "2013" , y:"80000"},
+			{ x: "2012" , y:"160000"},
+			{ x: "2011" , y:"240000"},
+			{ x: "2010" , y:"320000"},
+			{ x: "2009" , y:"400000"}
+		]
+	}
   ];
