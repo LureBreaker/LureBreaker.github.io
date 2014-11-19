@@ -203,7 +203,7 @@ nv.addGraph(function() {
       .margin({top: 30, right: 20, bottom: 50, left: 175})
       .showValues(true)
       //.tooltips(false)
-      .barColor(d3.scale.category20().range())
+      //.barColor(d3.scale.category20().range())
       .transitionDuration(250)
       .stacked(true)
       .showControls(false);
@@ -225,9 +225,9 @@ nv.addGraph(function() {
     console.log(e.point.label);
 	console.log(e.series.key);
 	//alert(window[e.point.label+e.series.key]);
-	$("#countryName").html(e.point.label);
-	$("#countryYear").html(e.series.key);
-   findCountryTransportation(e.point.label+e.series.key);
+	$("#countryYear").html(e.point.label);
+	$("#countryName").html(e.series.key);
+   findCountryTransportation(e.series.key+e.point.label);
    
 	
 	//d3.select('#expenditureLineChart svg').call(chart2);
