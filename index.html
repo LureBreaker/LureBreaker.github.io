@@ -99,20 +99,27 @@ text {
 					</div>
 					<div class="row">
 						<div class="span14 offset1">				
-								<img src="img/australia.png" style="width: 100px;height:75px;" id="aus" alt="Australia" class="img-polaroid flag">
-								<img src="img/china.png" style="width: 100px;height:75px;" id="chi" alt="China" class="img-polaroid flag">
-								<img src="img/india.jpg" style="width: 100px;height:75px;" id="ind" alt="India" class="img-polaroid flag">
-								<img src="img/indonesia.png" style="width: 100px;height:75px;" id="indo" alt="Indonesia" class="img-polaroid flag">
-								<img src="img/japan.png" style="width: 100px;height:75px;" id="jp" alt="Japan" class="img-polaroid flag">
-								<img src="img/malaysia.png" style="width: 100px;height:75px;" id="my" alt="Malaysia" class="img-polaroid flag">
-								<img src="img/philippines.png" style="width: 100px;height:75px;" id="ph" alt="Philippines" class="img-polaroid flag">
-								<img src="img/thailand.png" style="width: 100px;height:75px;" id="th" alt="Thailand" class="img-polaroid flag">
-								<img src="img/UK.png" style="width: 100px;height:75px;" id="uk" alt="UK" class="img-polaroid flag">
-								<img src="img/USA.png" style="width: 100px;height:75px;" id="usa" alt="USA" class="img-polaroid flag">	
+								<img src="img/australia.png" style="width: 100px;height:75px;" id="Australia" alt="Australia" class="img-polaroid flag">
+								<img src="img/china.png" style="width: 100px;height:75px;" id="China" alt="China" class="img-polaroid flag">
+								<img src="img/india.jpg" style="width: 100px;height:75px;" id="India" alt="India" class="img-polaroid flag">
+								<img src="img/indonesia.png" style="width: 100px;height:75px;" id="Indonesia" alt="Indonesia" class="img-polaroid flag">
+								<img src="img/japan.png" style="width: 100px;height:75px;" id="Japan" alt="Japan" class="img-polaroid flag">
+								<img src="img/malaysia.png" style="width: 100px;height:75px;" id="Malaysia" alt="Malaysia" class="img-polaroid flag">
+								<img src="img/philippines.png" style="width: 100px;height:75px;" id="Philippines" alt="Philippines" class="img-polaroid flag">
+								<img src="img/thailand.png" style="width: 100px;height:75px;" id="Thailand" alt="Thailand" class="img-polaroid flag">
+								<img src="img/UK.png" style="width: 100px;height:75px;" id="UK" alt="UK" class="img-polaroid flag">
+								<img src="img/USA.png" style="width: 100px;height:75px;" id="USA" alt="USA" class="img-polaroid flag">	
 					</div>
 					</div>
 					<div class="row">
-						<div class="offset1"><div id="pieDescOverview" style="visibility:visible"><h3 id="transportationMode">10 countries visitor mode of transport summary over 5 years (2009 - 2013)</h3></div></div>
+						<div class="offset1">
+							<div id="pieDescOverview">
+								<h3>10 countries visitor mode of transport to Singapore over 5 years (2009 - 2013)</h3>
+							</div>						
+						</div>
+					
+							<div style="float:right;margin-right:50px;margin-top:-45px;" class="btn btn-link" id="revertBtn"><u>click here to revert</u></div>
+						
 						<div class="span14 offset1">
 						<!--	<div id="pieDesc" style="visibility:hidden"><h3 id="transportationMode"><span id="countryName"></span> visitor mode of transport over 5 years (2009 - 2013)</h3></div> -->
 							<div class="row">
@@ -268,15 +275,15 @@ nv.addGraph(function() {
   
   //click the bar to check the value inside it
   chart.multibar.dispatch.on("elementClick", function(e) {
-    console.log(e.point.label);
-	console.log(e.series.key);
+    //console.log(e.point.label);
+	//console.log(e.series.key);
 	//alert(window[e.point.label+e.series.key]);
-	$("#pieDescOverview").css('visibility','hidden');
-	$("#pieDesc").css('visibility','visible');
+	//$("#pieDescOverview").css('visibility','hidden');
+	//$("#pieDesc").css('visibility','visible');
 	//$("#countryYear").html(e.point.label);
-	$("#countryName").html(e.series.key);
+	//$("#countryName").html(e.series.key);
 	
-   findCountryTransportation(e.series.key+e.point.label);
+   //findCountryTransportation(e.series.key+e.point.label);
    
 	
 	//d3.select('#expenditureLineChart svg').call(chart2);
@@ -460,7 +467,7 @@ nv.addGraph(function() {
 });
 
 
-function findCountryTransportation(countryYear){
+function findCountryTransportation(id){
 	nv.addGraph(function() {
     var width = 200,
         height = 200;
@@ -473,7 +480,7 @@ function findCountryTransportation(countryYear){
         .height(height);
 
     d3.select("#transportationModePie1")
-          .datum(window[countryYear])
+          .datum(window[id+'2009'])
         .transition().duration(1200)
           .attr('width', width)
           .attr('height', height)
@@ -487,7 +494,7 @@ function findCountryTransportation(countryYear){
         .height(height);
 
     d3.select("#transportationModePie2")
-          .datum(window[countryYear])
+          .datum(window[id+'2010'])
         .transition().duration(1200)
           .attr('width', width)
           .attr('height', height)
@@ -501,7 +508,7 @@ function findCountryTransportation(countryYear){
         .height(height);
 
     d3.select("#transportationModePie3")
-          .datum(window[countryYear])
+          .datum(window[id+'2011'])
         .transition().duration(1200)
           .attr('width', width)
           .attr('height', height)
@@ -515,7 +522,7 @@ function findCountryTransportation(countryYear){
         .height(height);
 
     d3.select("#transportationModePie4")
-          .datum(window[countryYear])
+          .datum(window[id+'2012'])
         .transition().duration(1200)
           .attr('width', width)
           .attr('height', height)
@@ -529,7 +536,7 @@ function findCountryTransportation(countryYear){
         .height(height);
 
     d3.select("#transportationModePie5")
-          .datum(window[countryYear])
+          .datum(window[id+'2013'])
         .transition().duration(1200)
           .attr('width', width)
           .attr('height', height)
@@ -543,7 +550,36 @@ function findCountryTransportation(countryYear){
 });
 }
 
+$(".flag").click(function(){
+	//alert(this.id);
+	$('#pieDescOverview').html('<h3>'+this.id+' visitor mode of transport to Singapore over 5 years (2009-2013)</h3>');
+	findCountryTransportation(this.id);
 
+/**	$("#chartExpenditureBD").empty();
+	$("#legend").empty();
+	//$("#chartExpenditureBD").append("<svg></svg>");
+	
+	
+vis = d3.select("#chartExpenditureBD").append("svg:svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("svg:g")
+    .attr("id", "container")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+	
+	d3.text("csv/visit-sequences2.csv", function(text2) {
+	  var csv = d3.csv.parseRows(text2);
+	  var json = buildHierarchy(csv);
+	  createVisualization(json);
+	});
+**/
+});
+
+$("#revertBtn").click(function(){
+	$('#pieDescOverview').html('<h3>10 countries visitor mode of transport to Singapore over 5 years (2009 - 2013)</h3>');
+	findCountryTransportation('pie');
+});
 
 </script>
 </html>

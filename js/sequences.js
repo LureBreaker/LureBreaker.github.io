@@ -306,23 +306,3 @@ function buildHierarchy(csv) {
   return root;
 };
 
-$(".flag").click(function(){
-	$("#chartExpenditureBD").empty();
-	$("#legend").empty();
-	//$("#chartExpenditureBD").append("<svg></svg>");
-	
-	
-vis = d3.select("#chartExpenditureBD").append("svg:svg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("svg:g")
-    .attr("id", "container")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-	
-	d3.text("csv/visit-sequences2.csv", function(text2) {
-	  var csv = d3.csv.parseRows(text2);
-	  var json = buildHierarchy(csv);
-	  createVisualization(json);
-	});
-});

@@ -14,129 +14,7 @@ var testdata = [
   ];
 
 
-var transport2012 = [
-    {
-        "Indonesia": [
-            {
-                "key": "Air",
-                "y": 1752591
-            },
-            {
-                "key": "Sea",
-                "y": 259075
-            },
-            {
-                "key": "Land",
-                "y": 825871
-            }
-        ]
-    }
-];  
 
-var pie2009 = [
-    {
-      key: "Air",
-      y: 5092916
-    },
-    {
-      key: "Sea",
-      y: 987747
-    },
-    {
-      key: "Land",
-      y: 1002070
-    }
-  ];
-  
-var pie2010 = [
-    {
-      key: "Air",
-      y: 6367169
-    },
-    {
-      key: "Sea",
-      y: 1072704
-    },
-    {
-      key: "Land",
-      y: 1164807
-    }
-  ];  
-
-var pie2011 = [
-    {
-      key: "Air",
-      y: 7378908
-    },
-    {
-      key: "Sea",
-      y: 1128478
-    },
-    {
-      key: "Land",
-      y: 1128478
-    }
-  ];
- 
-var pie2012 = [
-    {
-      key: "Air",
-      y: 8105108
-    },
-    {
-      key: "Sea",
-      y: 1243288
-    },
-    {
-      key: "Land",
-      y: 1515654
-    }
-  ];
-
-var pie2013 = [
-    {
-      key: "Air",
-      y: 8666823
-    },
-    {
-      key: "Sea",
-      y: 1302427
-    },
-    {
-      key: "Land",
-      y: 1700606
-    }
-  ];
-  
-var Indonesia2012 = [
-    {
-      key: "Air",
-      y: 1752591
-    },
-    {
-      key: "Sea",
-      y: 825871
-    },
-    {
-      key: "Land",
-      y: 259075
-    }
-  ];
-  
-var China2012 = [
-    {
-      key: "Air",
-      y: 1455978
-    },
-    {
-      key: "Sea",
-      y: 62352
-    },
-    {
-      key: "Land",
-      y: 515847
-    }
-  ];
   
   var expenditure = [
 	{
@@ -717,4 +595,832 @@ number_visitor_data =
       } 
     ]
   }
+  ];
+  
+  var pie2009 = [
+    {
+      key: "Air",
+      y: 5092916
+    },
+    {
+      key: "Sea",
+      y: 987747
+    },
+    {
+      key: "Land",
+      y: 1002070
+    }
+  ];
+  
+var pie2010 = [
+    {
+      key: "Air",
+      y: 6367169
+    },
+    {
+      key: "Sea",
+      y: 1072704
+    },
+    {
+      key: "Land",
+      y: 1164807
+    }
+  ];  
+
+var pie2011 = [
+    {
+      key: "Air",
+      y: 7378908
+    },
+    {
+      key: "Sea",
+      y: 1128478
+    },
+    {
+      key: "Land",
+      y: 1318358
+    }
+  ];
+ 
+var pie2012 = [
+    {
+      key: "Air",
+      y: 8105108
+    },
+    {
+      key: "Sea",
+      y: 1243288
+    },
+    {
+      key: "Land",
+      y: 1515654
+    }
+  ];
+
+var pie2013 = [
+    {
+      key: "Air",
+      y: 8666823
+    },
+    {
+      key: "Sea",
+      y: 1302427
+    },
+    {
+      key: "Land",
+      y: 1700606
+    }
+  ];
+  
+var Indonesia2012 = [
+    {
+      key: "Air",
+      y: 1752591
+    },
+    {
+      key: "Sea",
+      y: 825871
+    },
+    {
+      key: "Land",
+      y: 259075
+    }
+  ];
+
+var Indonesia2013 = [
+    {
+      key: "Air",
+      y: 1889222
+    },
+    {
+      key: "Sea",
+      y: 855550
+    },
+    {
+      key: "Land",
+      y: 344087
+    }
+  ];
+
+var Indonesia2011 = [
+    {
+      key: "Air",
+      y: 1616498
+    },
+    {
+      key: "Sea",
+      y: 745274
+    },
+    {
+      key: "Land",
+      y: 230450
+    }
+  ];  
+
+var Indonesia2010 = [
+    {
+      key: "Air",
+      y: 1391130
+    },
+    {
+      key: "Sea",
+      y: 695929
+    },
+    {
+      key: "Land",
+      y: 218090
+    }
+  ];  
+
+var Indonesia2009 = [
+    {
+      key: "Air",
+      y: 932647
+    },
+    {
+      key: "Sea",
+      y: 608369
+    },
+    {
+      key: "Land",
+      y: 204314
+    }
+  ]; 
+
+var China2013 = [
+    {
+      key: "Air",
+      y: 1626501
+    },
+    {
+      key: "Sea",
+      y: 76759
+    },
+    {
+      key: "Land",
+      y: 566610
+    }
+  ];   
+  
+var China2012 = [
+    {
+      key: "Air",
+      y: 1455978
+    },
+    {
+      key: "Sea",
+      y: 62352
+    },
+    {
+      key: "Land",
+      y: 515847
+    }
+  ];
+  
+var China2011 = [
+    {
+      key: "Air",
+      y: 1152802
+    },
+    {
+      key: "Sea",
+      y: 55509
+    },
+    {
+      key: "Land",
+      y: 369211
+    }
+  ]; 
+
+var China2010 = [
+    {
+      key: "Air",
+      y: 878117
+    },
+    {
+      key: "Sea",
+      y: 38571
+    },
+    {
+      key: "Land",
+      y: 254649
+    }
+  ]; 
+
+var China2009 = [
+    {
+      key: "Air",
+      y: 689992
+    },
+    {
+      key: "Sea",
+      y: 34976
+    },
+    {
+      key: "Land",
+      y: 211779
+    }
+  ]; 
+  
+var Malaysia2013 = [
+    {
+      key: "Air",
+      y: 975070
+    },
+    {
+      key: "Sea",
+      y: 78782
+    },
+    {
+      key: "Land",
+      y: 227090
+    }
+  ]; 
+
+var Malaysia2012 = [
+    {
+      key: "Air",
+      y: 931233
+    },
+    {
+      key: "Sea",
+      y: 76257
+    },
+    {
+      key: "Land",
+      y: 224196
+    }
+  ];   
+  
+var Malaysia2011 = [
+    {
+      key: "Air",
+      y: 862935
+    },
+    {
+      key: "Sea",
+      y: 67948
+    },
+    {
+      key: "Land",
+      y: 210052
+    }
+  ];   
+  
+var Malaysia2010 = [
+    {
+      key: "Air",
+      y: 769234
+    },
+    {
+      key: "Sea",
+      y: 71499
+    },
+    {
+      key: "Land",
+      y: 196185
+    }
+  ];
+  
+var Malaysia2009 = [
+    {
+      key: "Air",
+      y: 581417
+    },
+    {
+      key: "Sea",
+      y: 70227
+    },
+    {
+      key: "Land",
+      y: 112665
+    }
+  ];
+
+var Australia2013 = [
+    {
+      key: "Air",
+      y: 1015769
+    },
+    {
+      key: "Sea",
+      y: 50735
+    },
+    {
+      key: "Land",
+      y: 58675
+    }
+  ];
+  
+var Australia2012 = [
+    {
+      key: "Air",
+      y: 956683
+    },
+    {
+      key: "Sea",
+      y: 46349
+    },
+    {
+      key: "Land",
+      y: 47341
+    }
+  ];
+
+  var Australia2011 = [
+    {
+      key: "Air",
+      y: 864981
+
+    },
+    {
+      key: "Sea",
+      y: 49353
+
+    },
+    {
+      key: "Land",
+      y: 41705
+
+    }
+  ];
+
+var Australia2010 = [
+    {
+      key: "Air",
+      y: 784806
+    },
+    {
+      key: "Sea",
+      y: 55320
+    },
+    {
+      key: "Land",
+      y: 40360
+    }
+  ];
+  
+var Australia2009 = [
+    {
+      key: "Air",
+      y: 725803
+    },
+    {
+      key: "Sea",
+      y: 61217
+    },
+    {
+      key: "Land",
+      y: 43279
+    }
+  ];
+  
+var India2013 = [
+    {
+      key: "Air",
+      y: 732258
+    },
+    {
+      key: "Sea",
+      y: 92172
+    },
+    {
+      key: "Land",
+      y: 109123
+    }
+  ];
+  
+var India2012 = [
+    {
+      key: "Air",
+      y: 685808
+    },
+    {
+      key: "Sea",
+      y: 86473
+    },
+    {
+      key: "Land",
+      y: 122712
+    }
+  ];
+  
+var India2011 = [
+    {
+      key: "Air",
+      y: 652060
+    },
+    {
+      key: "Sea",
+      y: 75850
+    },
+    {
+      key: "Land",
+      y: 141081
+    }
+  ];
+  
+var India2010 = [
+    {
+      key: "Air",
+      y: 612291
+    },
+    {
+      key: "Sea",
+      y: 73481
+    },
+    {
+      key: "Land",
+      y: 143131
+    }
+  ];
+  
+var India2009 = [
+    {
+      key: "Air",
+      y: 525598
+    },
+    {
+      key: "Sea",
+      y: 68657
+    },
+    {
+      key: "Land",
+      y: 131369
+    }
+  ];
+  
+var Japan2013 = [
+    {
+      key: "Air",
+      y: 687820
+    },
+    {
+      key: "Sea",
+      y: 38375
+    },
+    {
+      key: "Land",
+      y: 106650
+    }
+  ];
+  
+var Japan2012 = [
+    {
+      key: "Air",
+      y: 623322
+    },
+    {
+      key: "Sea",
+      y: 38904
+    },
+    {
+      key: "Land",
+      y: 94890
+    }
+  ];
+  
+var Japan2011 = [
+    {
+      key: "Air",
+      y: 534169
+    },
+    {
+      key: "Sea",
+      y: 37493
+    },
+    {
+      key: "Land",
+      y: 84755
+    }
+  ];
+  
+var Japan2010 = [
+    {
+      key: "Air",
+      y: 419945
+    },
+    {
+      key: "Sea",
+      y: 35282
+    },
+    {
+      key: "Land",
+      y: 73590
+    }
+  ];
+
+var Japan2009 = [
+    {
+      key: "Air",
+      y: 375417
+    },
+    {
+      key: "Sea",
+      y: 36406
+    },
+    {
+      key: "Land",
+      y: 78164
+    }
+  ];
+  
+var Philippines2013 = [
+    {
+      key: "Air",
+      y: 539691
+    },
+    {
+      key: "Sea",
+      y: 33346
+    },
+    {
+      key: "Land",
+      y: 114757
+    }
+  ];
+  
+var Philippines2012 = [
+    {
+      key: "Air",
+      y: 539422
+    },
+    {
+      key: "Sea",
+      y: 33466
+    },
+    {
+      key: "Land",
+      y: 83916
+    }
+  ];
+  
+var Philippines2011 = [
+    {
+      key: "Air",
+      y: 567420
+    },
+    {
+      key: "Sea",
+      y: 33957
+    },
+    {
+      key: "Land",
+      y: 76346
+    }
+  ];
+
+var Philippines2010 = [
+    {
+      key: "Air",
+      y: 444150
+    },
+    {
+      key: "Sea",
+      y: 28416
+    },
+    {
+      key: "Land",
+      y: 71778
+    }
+  ];
+  
+var Philippines2009 = [
+    {
+      key: "Air",
+      y: 335692
+    },
+    {
+      key: "Sea",
+      y: 28635
+    },
+    {
+      key: "Land",
+      y: 67745
+    }
+  ];
+  
+var UK2013 = [
+    {
+      key: "Air",
+      y: 395566
+    },
+    {
+      key: "Sea",
+      y: 31129
+    },
+    {
+      key: "Land",
+      y: 34764
+    }
+  ];
+  
+var UK2012 = [
+    {
+      key: "Air",
+      y: 380189
+    },
+    {
+      key: "Sea",
+      y: 33554
+    },
+    {
+      key: "Land",
+      y: 32754
+    }
+  ];
+  
+var UK2011 = [
+    {
+      key: "Air",
+      y: 379388
+    },
+    {
+      key: "Sea",
+      y: 28790
+    },
+    {
+      key: "Land",
+      y: 34433
+    }
+  ];
+  
+var UK2010 = [
+    {
+      key: "Air",
+      y: 389852
+    },
+    {
+      key: "Sea",
+      y: 36728
+    },
+    {
+      key: "Land",
+      y: 35134
+    }
+  ];
+
+var UK2009 = [
+    {
+      key: "Air",
+      y: 390532
+    },
+    {
+      key: "Sea",
+      y: 40484
+    },
+    {
+      key: "Land",
+      y: 38740
+    }
+  ];
+  
+var USA2012 = [
+    {
+      key: "Air",
+      y: 408597
+    },
+    {
+      key: "Sea",
+      y: 31564
+    },
+    {
+      key: "Land",
+      y: 37052
+    }
+  ];
+  
+var USA2013 = [
+    {
+      key: "Air",
+      y: 418818
+    },
+    {
+      key: "Sea",
+      y: 35360
+    },
+    {
+      key: "Land",
+      y: 37768
+    }
+  ];
+  
+var USA2011 = [
+    {
+      key: "Air",
+      y: 380469
+    },
+    {
+      key: "Sea",
+      y: 25070
+    },
+    {
+      key: "Land",
+      y: 35037
+    }
+  ];
+  
+var USA2010 = [
+    {
+      key: "Air",
+      y: 356107
+    },
+    {
+      key: "Sea",
+      y: 27199
+    },
+    {
+      key: "Land",
+      y: 33684
+    }
+  ];
+  
+var USA2009 = [
+    {
+      key: "Air",
+      y: 310484
+    },
+    {
+      key: "Sea",
+      y: 28315
+    },
+    {
+      key: "Land",
+      y: 31905
+    }
+  ];
+  
+var Thailand2012 = [
+    {
+      key: "Air",
+      y: 371285
+    },
+    {
+      key: "Sea",
+      y: 8498
+    },
+    {
+      key: "Land",
+      y: 97871
+    }
+  ];
+  
+var Thailand2013 = [
+    {
+      key: "Air",
+      y: 386108
+    },
+    {
+      key: "Sea",
+      y: 10219
+    },
+    {
+      key: "Land",
+      y: 101082
+    }
+  ];
+  
+var Thailand2011 = [
+    {
+      key: "Air",
+      y: 368186
+    },
+    {
+      key: "Sea",
+      y: 9234
+    },
+    {
+      key: "Land",
+      y: 95288
+    }
+  ];
+  
+var Thailand2010 = [
+    {
+      key: "Air",
+      y: 321537
+    },
+    {
+      key: "Sea",
+      y: 10279
+    },
+    {
+      key: "Land",
+      y: 98206
+    }
+  ];
+  
+var Thailand2009 = [
+    {
+      key: "Air",
+      y: 225334
+    },
+    {
+      key: "Sea",
+      y: 10461
+    },
+    {
+      key: "Land",
+      y: 82110
+    }
   ];
