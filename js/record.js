@@ -1,291 +1,3 @@
-/**number_visitor_data = 
- [
- {
-    "key": "2009",
-    "color": "#d67777",
-    "values": [
-      { 
-        "label" : "Indonesia" ,
-        "value" : 1745330
-      } , 
-      { 
-        "label" : "China" ,
-        "value" : 936747
-      } , 
-      { 
-        "label" : "Malaysia" ,
-        "value" : 764309
-      } , 
-      { 
-        "label" : "Australia" ,
-        "value" : 830299
-      } , 
-      {
-        "label" : "India" ,
-        "value" : 725624
-      } , 
-      { 
-        "label" : "Japan" ,
-        "value" : 489987
-      } ,      
-      {
-        "label" : "Philippines" ,
-        "value" : 432072
-      } , 
-	  { 
-        "label" : "UK" ,
-        "value" : 469756
-      } ,
-	  { 
-        "label" : "USA" ,
-        "value" : 370704
-      } ,
-      { 
-        "label" : "Thailand" ,
-        "value" : 317905
-      }  
-      
-    ]
-  },{
-    "key": "2010",
-    "color": "#d67777",
-    "values": [
-      { 
-        "label" : "Indonesia" ,
-        "value" : 2306243
-      } , 
-      { 
-        "label" : "China" ,
-        "value" : 1171493
-      } , 
-      { 
-        "label" : "Malaysia" ,
-        "value" : 1037489
-      } , 
-      { 
-        "label" : "Australia" ,
-        "value" : 880558
-      } , 
-      {
-        "label" : "India" ,
-        "value" : 828994
-      } , 
-      { 
-        "label" : "Japan" ,
-        "value" : 528951
-      } , 
-	  {
-        "label" : "Philippines" ,
-        "value" : 544449
-      } ,
-      { 
-        "label" : "UK" ,
-        "value" : 461769
-      } ,
-	  { 
-        "label" : "USA" ,
-        "value" : 417195
-      },       
-      { 
-        "label" : "Thailand" ,
-        "value" : 430067
-      } 
-    ]
-  },{
-    "key": "2011",
-    "color": "#d67777",
-    "values": [
-      { 
-        "label" : "Indonesia" ,
-        "value" : 2592222
-      } , 
-      { 
-        "label" : "China" ,
-        "value" : 1577522
-      } , 
-      { 
-        "label" : "Malaysia" ,
-        "value" : 1140935
-      } , 
-      { 
-        "label" : "Australia" ,
-        "value" : 956039
-      } , 
-      {
-        "label" : "India" ,
-        "value" : 868991
-      } , 
-      { 
-        "label" : "Japan" ,
-        "value" : 656417
-      } , 
-	  {
-        "label" : "Philippines" ,
-        "value" : 677723
-      },
-      { 
-        "label" : "UK" ,
-        "value" : 442611
-      } , 
-	  { 
-        "label" : "USA" ,
-        "value" : 440576
-      } ,
-      { 
-        "label" : "Thailand" ,
-        "value" : 472708
-      }     
-    ]
-  },{
-    "key": "2012",
-    "color": "#d67777",
-    "values": [
-      { 
-        "label" : "Indonesia" ,
-        "value" : 2837537
-      } , 
-      { 
-        "label" : "China" ,
-        "value" : 2034177
-      } , 
-      { 
-        "label" : "Malaysia" ,
-        "value" : 1231686
-      } , 
-      { 
-        "label" : "Australia" ,
-        "value" : 1050373
-      } , 
-      {
-        "label" : "India" ,
-        "value" : 894993
-      } , 
-      { 
-        "label" : "Japan" ,
-        "value" : 757116
-      } , {
-        "label" : "Philippines" ,
-        "value" : 656804
-      } ,
-      { 
-        "label" : "UK" ,
-        "value" : 446497
-      } , 
-       { 
-        "label" : "USA" ,
-        "value" : 477213
-      } ,
-      { 
-        "label" : "Thailand" ,
-        "value" : 477654
-      }  
-      
-    ]
-  },{
-    "key": "2013",
-    "color": "#d67777",
-    "values": [
-      { 
-        "label" : "Indonesia" ,
-        "value" : 3088859
-      } , 
-      { 
-        "label" : "China" ,
-        "value" : 2269870
-      } , 
-      { 
-        "label" : "Malaysia" ,
-        "value" : 1280942
-      } , 
-      { 
-        "label" : "Australia" ,
-        "value" : 1125179
-      } , 
-      {
-        "label" : "India" ,
-        "value" : 933553
-      } , 
-      { 
-        "label" : "Japan" ,
-        "value" : 832845
-      } , {
-        "label" : "Philippines" ,
-        "value" : 687794
-      },
-      { 
-        "label" : "UK" ,
-        "value" : 461459
-      } ,  
-	  { 
-        "label" : "USA" ,
-        "value" : 491946
-      } ,
-      { 
-        "label" : "Thailand" ,
-        "value" : 497409
-      }  
-      
-    ]
-  }
- 
-]
-;
-**/
-long_short_data2 = 
- [
-  {
-    "key": "Number of visitors",
-    "color": "#d67777",
-    "values": [
-      { 
-        "label" : "Indonesia" ,
-        "value" : 20
-      } , 
-      { 
-        "label" : "China" ,
-        "value" : 12
-      } , 
-      { 
-        "label" : "Malaysia" ,
-        "value" : 78
-      }  , 
-      { 
-        "label" : "Malaysia" ,
-        "value" : 78
-      }, 
-      { 
-        "label" : "Australia" ,
-        "value" : 71
-      } , 
-      {
-        "label" : "India" ,
-        "value" : 63
-      } , 
-      { 
-        "label" : "Japan" ,
-        "value" : 54
-      } , 
-      { 
-        "label" : "Hong Kong SAR" ,
-        "value" : 46
-      } , 
-      {
-        "label" : "South Korea" ,
-        "value" : 37
-      } , 
-      { 
-        "label" : "Thailand" ,
-        "value" : 34
-      } , 
-      { 
-        "label" : "USA" ,
-        "value" : 33
-      } 
-    ]
-  }
-]
-;
-
 var testdata = [
     {
       key: "One",
@@ -321,6 +33,81 @@ var transport2012 = [
     }
 ];  
 
+var pie2009 = [
+    {
+      key: "Air",
+      y: 5092916
+    },
+    {
+      key: "Sea",
+      y: 987747
+    },
+    {
+      key: "Land",
+      y: 1002070
+    }
+  ];
+  
+var pie2010 = [
+    {
+      key: "Air",
+      y: 6367169
+    },
+    {
+      key: "Sea",
+      y: 1072704
+    },
+    {
+      key: "Land",
+      y: 1164807
+    }
+  ];  
+
+var pie2011 = [
+    {
+      key: "Air",
+      y: 7378908
+    },
+    {
+      key: "Sea",
+      y: 1128478
+    },
+    {
+      key: "Land",
+      y: 1128478
+    }
+  ];
+ 
+var pie2012 = [
+    {
+      key: "Air",
+      y: 8105108
+    },
+    {
+      key: "Sea",
+      y: 1243288
+    },
+    {
+      key: "Land",
+      y: 1515654
+    }
+  ];
+
+var pie2013 = [
+    {
+      key: "Air",
+      y: 8666823
+    },
+    {
+      key: "Sea",
+      y: 1302427
+    },
+    {
+      key: "Land",
+      y: 1700606
+    }
+  ];
+  
 var Indonesia2012 = [
     {
       key: "Air",
@@ -354,40 +141,106 @@ var China2012 = [
   var expenditure = [
 	{
 		"key":"Indonesia",
-		"color": "#d67777",
 		"values": [
-			{ x: "2013" , y:"100000"},
-			{ x: "2012" , y:"150000"},
-			{ x: "2011" , y:"200000"},
-			{ x: "2010" , y:"250000"},
-			{ x: "2009" , y:"300000"}
+			{ x: "2013" , y:"964"},
+			{ x: "2012" , y:"1107"},
+			{ x: "2011" , y:"2853"},
+			{ x: "2010" , y:"2604"},
+			{ x: "2009" , y:"1599"}
+		]
+	},{
+		"key":"China",
+		"values": [
+			{ x: "2013" , y:"1313"},
+			{ x: "2012" , y:"1237"},
+			{ x: "2011" , y:"2110"},
+			{ x: "2010" , y:"1644"},
+			{ x: "2009" , y:"1052"}
 		]
 	},
 	{
 		"key":"Malaysia",
-		"color": "#d23423",
 		"values": [
-			{ x: "2013" , y:"80000"},
-			{ x: "2012" , y:"160000"},
-			{ x: "2011" , y:"240000"},
-			{ x: "2010" , y:"320000"},
-			{ x: "2009" , y:"500000"}
+			{ x: "2013" , y:"694"},
+			{ x: "2012" , y:"782"},
+			{ x: "2011" , y:"893"},
+			{ x: "2010" , y:"767"},
+			{ x: "2009" , y:"513"}
 		]
 	},
 	{
-		"key":"Singapore",
-		"color": "#d20934",
+		"key":"Australia",
 		"values": [
-			{ x: "2013" , y:"70000"},
-			{ x: "2012" , y:"140000"},
-			{ x: "2011" , y:"210000"},
-			{ x: "2010" , y:"280000"},
-			{ x: "2009" , y:"350000"}
+			{ x: "2013" , y:"958"},
+			{ x: "2012" , y:"988"},
+			{ x: "2011" , y:"1095"},
+			{ x: "2010" , y:"1002"},
+			{ x: "2009" , y:"617"}
+		]
+	},
+	{
+		"key":"India",
+		"values": [
+			{ x: "2013" , y:"1311"},
+			{ x: "2012" , y:"1255"},
+			{ x: "2011" , y:"1103"},
+			{ x: "2010" , y:"911"},
+			{ x: "2009" , y:"590"}
+		]
+	},
+	{
+		"key":"Japan",
+		"values": [
+			{ x: "2013" , y:"1094"},
+			{ x: "2012" , y:"1254"},
+			{ x: "2011" , y:"796"},
+			{ x: "2010" , y:"609"},
+			{ x: "2009" , y:"368"}
+		]
+	},
+	{
+		"key":"Philippines",
+		"values": [
+			{ x: "2013" , y:"994"},
+			{ x: "2012" , y:"1167"},
+			{ x: "2011" , y:"840"},
+			{ x: "2010" , y:"628"},
+			{ x: "2009" , y:"485"}
+		]
+	},
+	{
+		"key":"UK",
+		"values": [
+			{ x: "2013" , y:"1115"},
+			{ x: "2012" , y:"1078"},
+			{ x: "2011" , y:"538"},
+			{ x: "2010" , y:"542"},
+			{ x: "2009" , y:"373"}
+		]
+	},
+	{
+		"key":"USA",
+		"values": [
+			{ x: "2013" , y:"1270"},
+			{ x: "2012" , y:"1375"},
+			{ x: "2011" , y:"618"},
+			{ x: "2010" , y:"647"},
+			{ x: "2009" , y:"431"}
+		]
+	},
+	{
+		"key":"Thailand",
+		"values": [
+			{ x: "2013" , y:"1242"},
+			{ x: "2012" , y:"1302"},
+			{ x: "2011" , y:"570"},
+			{ x: "2010" , y:"549"},
+			{ x: "2009" , y:"386"}
 		]
 	}
   ];
   
-  
+ //horizontal bar chart 
   number_visitor_data = 
  [
  {
