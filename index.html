@@ -8,15 +8,24 @@
 <style>
 
 body {
-  overflow-y:scroll;
+	overflow: hidden;
 }
 
 text {
   font: 12px sans-serif;
 }
 
+.nvd3 .nv-groups .nv-point {
+    stroke-opacity: 0.3 !important;
+    stroke-width: 10px;
+}
+
+.nv-line {
+	stroke-opacity: 0.3 !important;
+    stroke-width: 10px;
+}
+
 #chart1 {
-  margin: 10px;
   min-width: 100px;
   min-height: 100px;
 /*
@@ -27,91 +36,84 @@ text {
 }
 
 #chart1 svg {
+  height: 300px;
+}
+
+#chart2 svg {
   height: 500px;
+}
+
+#chart2 {
+  min-width: 100px;
+  min-height: 100px;
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
 }
 
 </style>
 <head>
 	<title>Team DataWiz: Number of visitors of Singapore</title>
 </head>
-<body>
-	<div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#">Team DataWiz</a>
-         <!-- <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div> 
-      </div>
-    </div>
+<body>	
 	<div class="container-fluid carousel">
 			
 		<div id="myCarousel" class="carousel slide">
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
 			</ol>
 			<!-- Carousel items -->
 			<div class="carousel-inner">
 				<div class="active item">
-					<h3>&nbsp;&nbsp;&nbsp;&nbsp;Total number of visitors 2009 - 2013</h3>
+				<div class="row">
+				<div class="span14 offset1">
+					<h3>Total number of visitors 2009 - 2013</h3>
+				</div>	
+						<div class="span14 offset1"><h4>Please select the country:</h4>				
+								<img src="img/australia.png" style="width: 50px;height:25px;" id="Australia" alt="Australia" class="img-polaroid flag">
+								<img src="img/china.png" style="width: 50px;height:25px;" id="China" alt="China" class="img-polaroid flag">
+								<img src="img/india.jpg" style="width: 50px;height:25px;" id="India" alt="India" class="img-polaroid flag">
+								<img src="img/indonesia.png" style="width: 50px;height:25px;" id="Indonesia" alt="Indonesia" class="img-polaroid flag">
+								<img src="img/japan.png" style="width: 50px;height:25px;" id="Japan" alt="Japan" class="img-polaroid flag">
+								<img src="img/malaysia.png" style="width: 50px;height:25px;" id="Malaysia" alt="Malaysia" class="img-polaroid flag">
+								<img src="img/philippines.png" style="width: 50px;height:25px;" id="Philippines" alt="Philippines" class="img-polaroid flag">
+								<img src="img/thailand.png" style="width: 50px;height:25px;" id="Thailand" alt="Thailand" class="img-polaroid flag">
+								<img src="img/UK.png" style="width: 50px;height:25px;" id="UK" alt="UK" class="img-polaroid flag">
+								<img src="img/USA.png" style="width: 50px;height:25px;" id="USA" alt="USA" class="img-polaroid flag">	
+						</div>
+					</div>
 					 <!--<div class="offset1">The diagram shows the total number of visitors over the year</div> -->				
 					<div class="row">
 						<div class="span8">
 							<div class="row">
-								<div class="span9 offset1">
+								<div class="span5 offset1">
 									<h4>Number of Singapore visitors over 5 years (2009-2013), top 10</h4>
 								</div>
-								<div class="span9">
-								  <div id="chart1" class='with-3d-shadow with-transitions'>
+								<div class="span8">
+								  <div id="chart1" class='with-3d-shadow with-transitions' style="margin-top:-5px;">
 									<svg></svg>
 								  </div>
-								</div>
-								<div class="span9">
-									<p align="center" style="margin-top:-30px;">Visitors</p>
 								</div>
 						  </div>
 						</div>
 						<div class="span8">
 						<div class="row">
 							<!--<h4>&nbsp;&nbsp;&nbsp;&nbsp;Expenditure in Singapore over 5 years</h4>	-->
-							<div class="span9 offset1">
+							<div class="span5 offset1">
 									<h4>Expenditure of Singapore visitors over 5 years (2009-2013), top 10</h4>
 								</div>
 							<div class="span8">
 								<div id="expenditureLineChart" >
-									<svg style="height: 500px;"></svg>
+									<svg style="height: 300px;"></svg>
 								</div>
 							</div>
 						</div>
 					</div>
 					</div>
-					<div class="row">
-						<div class="span14 offset1"><h4>Please select the country:</h4></div>
-						<div class="span14 offset1">				
-								<img src="img/australia.png" style="width: 100px;height:75px;" id="Australia" alt="Australia" class="img-polaroid flag">
-								<img src="img/china.png" style="width: 100px;height:75px;" id="China" alt="China" class="img-polaroid flag">
-								<img src="img/india.jpg" style="width: 100px;height:75px;" id="India" alt="India" class="img-polaroid flag">
-								<img src="img/indonesia.png" style="width: 100px;height:75px;" id="Indonesia" alt="Indonesia" class="img-polaroid flag">
-								<img src="img/japan.png" style="width: 100px;height:75px;" id="Japan" alt="Japan" class="img-polaroid flag">
-								<img src="img/malaysia.png" style="width: 100px;height:75px;" id="Malaysia" alt="Malaysia" class="img-polaroid flag">
-								<img src="img/philippines.png" style="width: 100px;height:75px;" id="Philippines" alt="Philippines" class="img-polaroid flag">
-								<img src="img/thailand.png" style="width: 100px;height:75px;" id="Thailand" alt="Thailand" class="img-polaroid flag">
-								<img src="img/UK.png" style="width: 100px;height:75px;" id="UK" alt="UK" class="img-polaroid flag">
-								<img src="img/USA.png" style="width: 100px;height:75px;" id="USA" alt="USA" class="img-polaroid flag">	
-					</div>
-					</div>
+					
 					<div class="row">
 						<div class="offset1">
 							<div id="pieDescOverview">
@@ -125,24 +127,24 @@ text {
 						<!--	<div id="pieDesc" style="visibility:hidden"><h3 id="transportationMode"><span id="countryName"></span> visitor mode of transport over 5 years (2009 - 2013)</h3></div> -->
 							<div class="row">
 								<div class="span2">
-									<svg id="transportationModePie1" class="mypiechart" style="height: 180px; width: 200px;"></svg>	
-									<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2009</p>
+									<svg id="transportationModePie1" class="mypiechart" style="height: 150px; width: 200px;"></svg>	
+									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2009</p>
 								</div>
 								<div class="span2 offset1">
-									<svg id="transportationModePie2" class="mypiechart" style="height: 180px; width: 200px;"></svg>
-									<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2010</p>
+									<svg id="transportationModePie2" class="mypiechart" style="height: 150px; width: 200px;"></svg>
+									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2010</p>
 								</div>
 								<div class="span2 offset1">
-									<svg id="transportationModePie3" class="mypiechart" style="height: 180px; width: 200px;"></svg>
-									<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2011</p>
+									<svg id="transportationModePie3" class="mypiechart" style="height: 150px; width: 200px;"></svg>
+									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2011</p>
 								</div>
 								<div class="span2 offset1">
-									<svg id="transportationModePie4" class="mypiechart" style="height: 180px; width: 200px;"></svg>
-									<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012</p>
+									<svg id="transportationModePie4" class="mypiechart" style="height: 150px; width: 200px;"></svg>
+									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012</p>
 								</div>
 								<div class="span2 offset1">
-									<svg id="transportationModePie5" class="mypiechart" style="height: 180px; width: 200px;"></svg>
-									<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013</p>
+									<svg id="transportationModePie5" class="mypiechart" style="height: 150px; width: 200px;"></svg>
+									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013</p>
 								</div>
 							</div>
 							
@@ -153,39 +155,13 @@ text {
 					<h3>&nbsp;&nbsp;&nbsp;&nbsp;Expenditure Breakdown of each country visitor in Singapore</h3>
 				<div class="row">
 					
-					
-					<br />
-					<!--<div class="span12"><h4>&nbsp;&nbsp;&nbsp;&nbsp;Please select the country to check their expenditure breakdown:</h4></div> -->
-					
-				</div>
-				
-				<br />
-				<br />
-					<!--sun burst -->
-				<div class="container">
-					<div class ="row">
-						<div class="span10">
-						  <div id="sequence"></div>
-						  <div id="chartExpenditureBD">
-						  
-							<!--<div id="explanation" style="visibility: hidden;">
-							  <span id="percentage"></span><br/>
-							  of visits begin with this sequence of pages
-							</div>-->
-						  </div>
-						</div>
-						<div class="span2">
-						  <!--<input type="checkbox" id="togglelegend"> Legend<br/>-->
-						  <div id="legend" style=""></div>
-						</div>
-					</div>
-					</div>
 				</div>
 			</div>
 			<!-- Carousel nav -->
+			</div>
 			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 			<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-		</div>
+		
 	</div>
 		
 	
@@ -238,7 +214,7 @@ text {
 <script src="js/scatter.js"></script>
 <script src="js/line.js"></script>
 <script src="js/lineChart.js"></script>
-<script src="js/sequences.js"></script>
+<!--<script src="js/sequences.js"></script>-->
 <script>
 
 
@@ -248,34 +224,36 @@ $(document).ready(function(){
 
 var chart;
 nv.addGraph(function() {
-  chart = nv.models.multiBarHorizontalChart()
-      .x(function(d) { return d.label })
-      .y(function(d) { return d.value })
-      .margin({ bottom: 50, right:50})
-      .showValues(true)
-      //.tooltips(false)
-      //.barColor(d3.scale.category20().range())
-      .transitionDuration(250)
-      .stacked(true)
-      .showControls(false);
+  chart = nv.models.lineChart()
+      .margin({left: 100})
+  .forceY([0,3200000])
+  .options({
+	showXAxis: true,
+    showYAxis: true,
+    transitionDuration: 250
+  })
 
   chart.yAxis
-      .tickFormat(d3.format(',.2f'));
+	  .axisLabel("Million(SGD)")
+      .tickFormat(d3.format(',.f'));
   
   chart.xAxis
     .axisLabel("Visitors");
 	
   d3.select('#chart1 svg')
-      .datum(number_visitor_data)
-      .call(chart);
+      .datum(noVisitor)
+      .call(chart)
+	  ;
 
   nv.utils.windowResize(chart.update);
 
   chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
-
-  
+  chart.lines.dispatch.on("elementClick", function(e) { 
+	console.log(e);
+	//e.target.style.opacity = "10px";
+  });
   //click the bar to check the value inside it
-  chart.multibar.dispatch.on("elementClick", function(e) {
+  //chart.lineChart.dispatch.on("elementClick", function(e) {
     //console.log(e.point.label);
 	//console.log(e.series.key);
 	//alert(window[e.point.label+e.series.key]);
@@ -290,11 +268,19 @@ nv.addGraph(function() {
 	//d3.select('#expenditureLineChart svg').call(chart2);
 	//$('.carousel').carousel(1);
 	//$('.carousel').carousel('pause');
-  });
+ // });
+  
+	d3.selectAll(".nv-line").on("click", function (e) {
+		console.log(e);
+		
+	});
   
   return chart;
 });
 
+
+
+/**
 $("#change").on("click",function(){
 	d3.select('#chart1 svg')
       .datum(long_short_data2)
@@ -306,12 +292,13 @@ $("#change2").on("click",function(){
       .datum(number_visitor_data)
       .call(chart);
 });
+**/
 
 //pie chart generation js
 var chart3;
 nv.addGraph(function() {
     var width = 200,
-        height = 200;
+        height = 150;
 
      chart3 = nv.models.pieChart()
         .x(function(d) { return d.key })
@@ -335,7 +322,7 @@ nv.addGraph(function() {
 var chart4;
 nv.addGraph(function() {
     var width = 200,
-        height = 200;
+        height = 150;
 
      chart4 = nv.models.pieChart()
         .x(function(d) { return d.key })
@@ -359,7 +346,7 @@ nv.addGraph(function() {
 var chart5;
 nv.addGraph(function() {
     var width = 200,
-        height = 200;
+        height = 150;
 
      chart5 = nv.models.pieChart()
         .x(function(d) { return d.key })
@@ -383,7 +370,7 @@ nv.addGraph(function() {
 var chart6;
 nv.addGraph(function() {
     var width = 200,
-        height = 200;
+        height = 150;
 
      chart6 = nv.models.pieChart()
         .x(function(d) { return d.key })
@@ -407,7 +394,7 @@ nv.addGraph(function() {
 var chart7;
 nv.addGraph(function() {
     var width = 200,
-        height = 200;
+        height = 150;
 
     var chart7 = nv.models.pieChart()
         .x(function(d) { return d.key })
@@ -597,6 +584,64 @@ $("#revertBtn").click(function(){
 	$('#pieDescOverview').html('<h3>10 countries visitor mode of transport to Singapore over 5 years (2009 - 2013)</h3>');
 	findCountryTransportation('pie');
 });
+
+
+var chart8;
+nv.addGraph(function() {
+  chart8 = nv.models.lineChart()
+      .margin({left: 50})
+  .forceY([0,3000])
+  .options({
+	showXAxis: true,
+    showYAxis: true,
+    transitionDuration: 250
+  })
+
+  chart8.yAxis
+	  .axisLabel("Million(SGD)")
+      .tickFormat(d3.format(',.f'));
+  
+  chart8.xAxis
+    .axisLabel("Visitors");
+	
+  d3.select('#chart2 svg')
+      .datum(noVisitor)
+      .call(chart8)
+	  ;
+
+  nv.utils.windowResize(chart.update);
+
+  chart8.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+  chart8.lines.dispatch.on("elementClick", function(e) { 
+	console.log(e);
+	//e.target.style.opacity = "10px";
+  });
+  //click the bar to check the value inside it
+  //chart.lineChart.dispatch.on("elementClick", function(e) {
+    //console.log(e.point.label);
+	//console.log(e.series.key);
+	//alert(window[e.point.label+e.series.key]);
+	//$("#pieDescOverview").css('visibility','hidden');
+	//$("#pieDesc").css('visibility','visible');
+	//$("#countryYear").html(e.point.label);
+	//$("#countryName").html(e.series.key);
+	
+   //findCountryTransportation(e.series.key+e.point.label);
+   
+	
+	//d3.select('#expenditureLineChart svg').call(chart2);
+	//$('.carousel').carousel(1);
+	//$('.carousel').carousel('pause');
+ // });
+  
+	d3.selectAll(".nv-line").on("click", function (e) {
+		console.log(e);
+		
+	});
+  
+  return chart;
+});
+
 
 </script>
 </html>
