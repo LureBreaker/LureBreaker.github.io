@@ -77,7 +77,7 @@ text {
 				<div class="active item">
 				<div class="row">
 				<div class="span14 offset1">
-					<h3>Total number of visitors 2009 - 2013</h3>
+					<h3>Total number of visitors 2005 - 2013</h3>
 				</div>	
 						<div class="span14 offset1"><h4>Please select the country:</h4>				
 								<img src="img/australia.png" style="width: 50px;height:25px;" id="Australia" alt="Australia" class="img-polaroid flag">
@@ -94,25 +94,25 @@ text {
 					</div>
 					 <!--<div class="offset1">The diagram shows the total number of visitors over the year</div> -->				
 					<div class="row">
-						<div class="span8">
+						<div class="span10">
 							<div class="row">
 								<div class="span5 offset1">
-									<h4>Number of Singapore visitors over 5 years (2009-2013), top 10</h4>
+									<h4>Number of Singapore visitors over 9 years (2005-2013), top 10</h4>
 								</div>
-								<div class="span8">
+								<div class="span10">
 								  <div id="chart1" class='with-3d-shadow with-transitions' style="margin-top:-5px;">
 									<svg></svg>
 								  </div>
 								</div>
 						  </div>
 						</div>
-						<div class="span8">
+						<div class="span10">
 						<div class="row">
 							<!--<h4>&nbsp;&nbsp;&nbsp;&nbsp;Expenditure in Singapore over 5 years</h4>	-->
 							<div class="span5 offset1">
-									<h4>Expenditure per capita of Singapore visitors over 5 years (2009-2013), top 10</h4>
+									<h4>Expenditure per capita of Singapore visitors over 9 years (2005-2013), top 10</h4>
 								</div>
-							<div class="span8">
+							<div class="span10">
 								<div id="expenditureLineChart" >
 									<svg style="height: 300px;"></svg>
 								</div>
@@ -123,14 +123,33 @@ text {
 					<div class="row" style="margin-top:-10px;">
 						<div class="offset1">
 							<div id="pieDescOverview">
-								<h3>10 countries visitor mode of transport to Singapore over 5 years (2009 - 2013)</h3>
+								<h3>10 countries visitor mode of transport to Singapore over 9 years (2005 - 2013)</h3>
 							</div>						
 						</div>
 					
 							<div style="float:right;margin-right:50px;margin-top:-45px;" class="btn btn-link" id="revertBtn"><u>click here to revert</u></div>
 						
-						<div class="span14 offset1">
+						<div class="span16 offset3">
 						<!--	<div id="pieDesc" style="visibility:hidden"><h3 id="transportationMode"><span id="countryName"></span> visitor mode of transport over 5 years (2009 - 2013)</h3></div> -->
+							<div class="container-fluid">
+							<div class="row">
+								<div class="span2 offset2">
+									<svg id="transportationModePie6" class="mypiechart" style="height: 150px; width: 200px;"></svg>	
+									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2005</p>
+								</div>
+								<div class="span2 offset1">
+									<svg id="transportationModePie7" class="mypiechart" style="height: 150px; width: 200px;"></svg>
+									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2006</p>
+								</div>
+								<div class="span2 offset1">
+									<svg id="transportationModePie8" class="mypiechart" style="height: 150px; width: 200px;"></svg>
+									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2007</p>
+								</div>
+								<div class="span2 offset1">
+									<svg id="transportationModePie9" class="mypiechart" style="height: 150px; width: 200px;"></svg>
+									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2008</p>
+								</div>
+							</div>
 							<div class="row">
 								<div class="span2">
 									<svg id="transportationModePie1" class="mypiechart" style="height: 150px; width: 200px;"></svg>	
@@ -153,6 +172,7 @@ text {
 									<p align="center" style="margin-top:-20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013</p>
 								</div>
 							</div>
+							</div>
 							
 						</div>
 					</div>
@@ -160,7 +180,7 @@ text {
 				<div class="item">
 					<div class="row">
 						<div class="span6 offset1">
-							<h3>Expenditure per capital versus length of stay, top 10</h3>
+							<h3>Expenditure per capital versus length of stay over 9 years (2005-2013), top 10</h3>
 						</div>	
 						<div class="span14 offset1"><h4>Please select the country:</h4>				
 								<img src="img/australia.png" style="width: 50px;height:25px;" id="Australia2" alt="Australia" class="img-polaroid flag2 Australia">
@@ -174,9 +194,13 @@ text {
 								<img src="img/UK.png" style="width: 50px;height:25px;" id="UK2" alt="UK" class="img-polaroid flag2 UK">
 								<img src="img/USA.png" style="width: 50px;height:25px;" id="USA2" alt="USA" class="img-polaroid flag2 USA">	
 						</div>
-						<div class="span14">
-							<div id="chartExPerCapital" class='with-3d-shadow with-transitions'>
-								<svg></svg>
+						<div class="span16">
+						<div class="row">
+							<div class="offset2">
+								<div id="chartExPerCapital" class='with-3d-shadow with-transitions'>
+									<svg></svg>
+								</div>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -424,7 +448,7 @@ nv.addGraph(function() {
     var width = 200,
         height = 150;
 
-    var chart7 = nv.models.pieChart()
+     chart7 = nv.models.pieChart()
         .x(function(d) { return d.key })
         .y(function(d) { return d.y })
         .color(d3.scale.category10().range())
@@ -441,6 +465,102 @@ nv.addGraph(function() {
     chart7.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
 
     return chart7;
+});
+
+var chart12;
+nv.addGraph(function() {
+    var width = 200,
+        height = 150;
+
+     chart12 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
+
+      d3.select("#transportationModePie6")
+          .datum(pie2005)
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart12);
+
+    chart12.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+    return chart12;
+});
+
+var chart9;
+nv.addGraph(function() {
+    var width = 200,
+        height = 150;
+
+     chart9 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
+
+      d3.select("#transportationModePie7")
+          .datum(pie2006)
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart9);
+
+    chart9.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+    return chart9;
+});
+
+var chart10;
+nv.addGraph(function() {
+    var width = 200,
+        height = 150;
+
+     chart10 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
+
+      d3.select("#transportationModePie8")
+          .datum(pie2007)
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart10);
+
+    chart10.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+    return chart10;
+});
+
+var chart11;
+nv.addGraph(function() {
+    var width = 200,
+        height = 150;
+
+     chart11 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
+
+      d3.select("#transportationModePie9")
+          .datum(pie2008)
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart11);
+
+    chart11.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+    return chart11;
 });
 
 
@@ -559,8 +679,63 @@ function findCountryTransportation(id){
           .attr('height', height)
           .call(chart7);
 
+	chart12 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
 
+    d3.select("#transportationModePie6")
+          .datum(window[id+'2005'])
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart12);	  
+		  
+		  
+	chart9 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
 
+    d3.select("#transportationModePie7")
+          .datum(window[id+'2006'])
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart9);
+
+	chart10 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
+
+    d3.select("#transportationModePie8")
+          .datum(window[id+'2007'])
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart10);	  
+
+	chart11 = nv.models.pieChart()
+        .x(function(d) { return d.key })
+        .y(function(d) { return d.y })
+        .color(d3.scale.category10().range())
+        .width(width)
+        .height(height);
+
+    d3.select("#transportationModePie9")
+          .datum(window[id+'2008'])
+        .transition().duration(1200)
+          .attr('width', width)
+          .attr('height', height)
+          .call(chart11);	  
+		  
     //chart3.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
 
    // return chart3;
@@ -610,7 +785,7 @@ $("#revertBtn").click(function(){
 	$('.flag').css('-webkit-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
 	$('.flag').css('-moz-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
 	$('.flag').css('box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
-	$('#pieDescOverview').html('<h3>10 countries visitor mode of transport to Singapore over 5 years (2009 - 2013)</h3>');
+	$('#pieDescOverview').html('<h3>10 countries visitor mode of transport to Singapore over 9 years (2005 - 2013)</h3>');
 	findCountryTransportation('pie');
 });
 
