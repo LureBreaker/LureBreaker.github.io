@@ -1526,3 +1526,194 @@ var noVisitor = [
 		]
 	}
   ];
+  
+  
+
+var Indonesia2 = [
+  {
+    "key" : "Indonesia Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 918] , [ 2010 , 1129] , [ 2011 , 1101] , [ 2012 , 1107] , [ 2013 , 964]]
+  },
+  
+
+  {
+    "key" : "Indonesia Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 3.5] , [ 2010 , 3.35] , [ 2011 , 3.23] , [ 2012 , 2.97] , [ 2013 , 2.77] ]
+  }
+
+].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+
+
+
+var Australia2 = [
+  {
+    "key" : "Australia Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 747] , [ 2010 , 1138] , [ 2011 , 1146] , [ 2012 , 988] , [ 2013 , 958]]
+  },
+  
+
+  {
+    "key" : "Australia Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 2.8] , [ 2010 , 2.89] , [ 2011 , 2.97] , [ 2012 , 2.85] , [ 2013 , 3] ]
+  }
+  ].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+
+ 
+
+var China2 = [
+  {
+    "key" : "China Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 918] , [ 2010 , 1129] , [ 2011 , 1101] , [ 2012 , 1107] , [ 2013 , 964]]
+  },
+  
+
+  {
+    "key" : "China Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 3.5] , [ 2010 , 3.35] , [ 2011 , 3.23] , [ 2012 , 2.97] , [ 2013 , 2.77] ]
+  }
+  ].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+
+  
+  
+var Malaysia2 = [
+  {
+    "key" : "Malaysia Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 672] , [ 2010 , 739] , [ 2011 , 783] , [ 2012 , 782] , [ 2013 , 694]]
+  },
+  
+
+  {
+    "key" : "Malaysia Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 2.2] , [ 2010 , 2.19] , [ 2011 , 2.12] , [ 2012 , 2.01] , [ 2013 , 2.02] ]
+  }
+  ].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+
+  
+
+var India2 = [
+  {
+    "key" : "India Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 817] , [ 2010 , 1099] , [ 2011 , 1270] , [ 2012 , 1255] , [ 2013 , 1311]]
+  },
+  
+
+  {
+    "key" : "India Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 5.8] , [ 2010 , 5.92] , [ 2011 , 6.03] , [ 2012 , 6.08] , [ 2013 , 6.38] ]
+  }
+    ].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+  
+  
+    
+var Japan2 = [
+  {
+    "key" : "Japan Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 754] , [ 2010 , 1152] , [ 2011 , 1212] , [ 2012 , 1254] , [ 2013 , 1094]]
+  },
+  
+
+  {
+    "key" : "Japan Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 2.3] , [ 2010 , 2.47] , [ 2011 , 2.55] , [ 2012 , 2.52] , [ 2013 , 2.5] ]
+  }
+   ].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+  
+   
+var Philippines2 = [
+  {
+    "key" : "Philippines Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 1128] , [ 2010 , 1153] , [ 2011 , 1239] , [ 2012 , 1167] , [ 2013 , 994]]
+  },
+  
+
+  {
+    "key" : "Philippines Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 8.6] , [ 2010 , 7.8] , [ 2011 , 6.66] , [ 2012 , 6.95] , [ 2013 , 6.32] ]
+  }  
+     ].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+  
+
+  
+var UK2 = [
+  {
+    "key" : "UK Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 804] , [ 2010 , 1174] , [ 2011 , 1215] , [ 2012 , 1078] , [ 2013 , 1115]]
+  },
+  
+
+  {
+    "key" : "UK Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 3.5] , [ 2010 , 3.69] , [ 2011 , 3.88] , [ 2012 , 3.8] , [ 2013 , 3.84] ]
+  }  
+      ].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+  
+   
+   
+var USA2 = [
+  {
+    "key" : "USA Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 1166] , [ 2010 , 1550] , [ 2011 , 1403] , [ 2012 , 1375] , [ 2013 , 1270]]
+  },
+  
+
+  {
+    "key" : "USA Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 4] , [ 2010 , 4.11] , [ 2011 , 4.14] , [ 2012 , 3.87] , [ 2013 , 3.88] ]
+  }  
+  ].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+   
+   
+   
+var Thailand2 = [
+  {
+    "key" : "Thailand Vistors' Per Capital Expenditure" ,
+    "bar": true,
+    "values" : [ [ 2009 , 1218] , [ 2010 , 1276] , [ 2011 , 1206] , [ 2012 , 1302] , [ 2013 , 1242]]
+  },
+  
+
+  {
+    "key" : "Thailand Vistors' Average Length of Stay" ,
+    "values" : [ [ 2009 , 5.6] , [ 2010 , 4.68] , [ 2011 , 4.52] , [ 2012 , 4.32] , [ 2013 , 4.14] ]
+  }  
+  ].map(function(series) {
+  series.values = series.values.map(function(d) { return {x: d[0], y: d[1] } });
+  return series;
+});
+

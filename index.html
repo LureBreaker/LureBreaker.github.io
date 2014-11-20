@@ -15,13 +15,8 @@ text {
   font: 12px sans-serif;
 }
 
-.nvd3 .nv-groups .nv-point {
+.nvd3 .nv-groups .nv-point .nv-line{
     stroke-opacity: 0.3 !important;
-    stroke-width: 10px;
-}
-
-.nv-line {
-	stroke-opacity: 0.3 !important;
     stroke-width: 10px;
 }
 
@@ -52,6 +47,18 @@ text {
   of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
 */
 }
+
+#chartExPerCapital svg {
+  width: 1300px;
+  height: 500px;
+  margin: 10px;
+  min-width: 100px;
+  min-height: 100px;
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
 
 </style>
 <head>
@@ -103,7 +110,7 @@ text {
 						<div class="row">
 							<!--<h4>&nbsp;&nbsp;&nbsp;&nbsp;Expenditure in Singapore over 5 years</h4>	-->
 							<div class="span5 offset1">
-									<h4>Expenditure of Singapore visitors over 5 years (2009-2013), top 10</h4>
+									<h4>Expenditure per capita of Singapore visitors over 5 years (2009-2013), top 10</h4>
 								</div>
 							<div class="span8">
 								<div id="expenditureLineChart" >
@@ -112,9 +119,8 @@ text {
 							</div>
 						</div>
 					</div>
-					</div>
-					
-					<div class="row">
+					</div>				
+					<div class="row" style="margin-top:-10px;">
 						<div class="offset1">
 							<div id="pieDescOverview">
 								<h3>10 countries visitor mode of transport to Singapore over 5 years (2009 - 2013)</h3>
@@ -152,11 +158,29 @@ text {
 					</div>
 				</div>
 				<div class="item">
-					<h3>&nbsp;&nbsp;&nbsp;&nbsp;Expenditure Breakdown of each country visitor in Singapore</h3>
-				<div class="row">
-					
+					<div class="row">
+						<div class="span6 offset1">
+							<h3>Expenditure per capital versus length of stay, top 10</h3>
+						</div>	
+						<div class="span14 offset1"><h4>Please select the country:</h4>				
+								<img src="img/australia.png" style="width: 50px;height:25px;" id="Australia2" alt="Australia" class="img-polaroid flag2 Australia">
+								<img src="img/china.png" style="width: 50px;height:25px;" id="China2" alt="China" class="img-polaroid flag2 China">
+								<img src="img/india.jpg" style="width: 50px;height:25px;" id="India2" alt="India" class="img-polaroid flag2 India">
+								<img src="img/indonesia.png" style="width: 50px;height:25px;" id="Indonesia2" alt="Indonesia" class="img-polaroid flag2 Indonesia">
+								<img src="img/japan.png" style="width: 50px;height:25px;" id="Japan2" alt="Japan" class="img-polaroid flag2 Japan">
+								<img src="img/malaysia.png" style="width: 50px;height:25px;" id="Malaysia2" alt="Malaysia" class="img-polaroid flag2 Malaysia">
+								<img src="img/philippines.png" style="width: 50px;height:25px;" id="Philippines2" alt="Philippines" class="img-polaroid flag2 Philippines">
+								<img src="img/thailand.png" style="width: 50px;height:25px;" id="Thailand2" alt="Thailand" class="img-polaroid flag2 Thailand">
+								<img src="img/UK.png" style="width: 50px;height:25px;" id="UK2" alt="UK" class="img-polaroid flag2 UK">
+								<img src="img/USA.png" style="width: 50px;height:25px;" id="USA2" alt="USA" class="img-polaroid flag2 USA">	
+						</div>
+						<div class="span14">
+							<div id="chartExPerCapital" class='with-3d-shadow with-transitions'>
+								<svg></svg>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
 			<!-- Carousel nav -->
 			</div>
 			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -214,6 +238,9 @@ text {
 <script src="js/scatter.js"></script>
 <script src="js/line.js"></script>
 <script src="js/lineChart.js"></script>
+<script src="js/historicalBar.js"></script>
+<script src="js/linePlusBarWithFocusChart.js"></script>
+<!--<script src="js/linePlusBarWithFocusChartApplication.js"></script>-->
 <!--<script src="js/sequences.js"></script>-->
 <script>
 
@@ -230,7 +257,8 @@ nv.addGraph(function() {
   .options({
 	showXAxis: true,
     showYAxis: true,
-    transitionDuration: 250
+    transitionDuration: 250,
+	//showLegend:false
   })
 
   chart.yAxis
@@ -427,7 +455,8 @@ nv.addGraph(function() {
   .options({
 	showXAxis: true,
     showYAxis: true,
-    transitionDuration: 250
+    transitionDuration: 250,
+	//showLegend: false
   })
   ;
 
@@ -458,7 +487,7 @@ nv.addGraph(function() {
 function findCountryTransportation(id){
 	nv.addGraph(function() {
     var width = 200,
-        height = 200;
+        height = 150;
 
     chart3 = nv.models.pieChart()
         .x(function(d) { return d.key })
@@ -585,62 +614,112 @@ $("#revertBtn").click(function(){
 	findCountryTransportation('pie');
 });
 
-
 var chart8;
 nv.addGraph(function() {
-  chart8 = nv.models.lineChart()
-      .margin({left: 50})
-  .forceY([0,3000])
-  .options({
-	showXAxis: true,
-    showYAxis: true,
-    transitionDuration: 250
-  })
+     chart8 = nv.models.linePlusBarWithFocusChart()
+        .margin({top: 30, right: 60, bottom: 50, left: 70})
+        .x(function(d,i) { return i })
+        .color(d3.scale.category10().range());
 
-  chart8.yAxis
-	  .axisLabel("Million(SGD)")
-      .tickFormat(d3.format(',.f'));
-  
-  chart8.xAxis
-    .axisLabel("Visitors");
-	
-  d3.select('#chart2 svg')
-      .datum(noVisitor)
-      .call(chart8)
-	  ;
+	chart8.xAxis.tickFormat(function(d) {
 
-  nv.utils.windowResize(chart.update);
+      var dx = Australia2[0].values[d] && Australia2[0].values[d].x || 0;
+      if (dx > 0) {
+			return dx
+		  //return d3.time.format('%x')(new Date(dx))
+      }
+      return null;
+    });
+	
+    chart8.x2Axis.tickFormat(function(d) {
+      var dx = Australia2[0].values[d] && Australia2[0].values[d].x || 0;
+	    if (dx > 0) {
+	  return dx
+      //return d3.time.format('%x')(new Date(dx))
+	  }
+    });
+     
+    chart8.y1Axis
+        .tickFormat(d3.format(',f'));
 
-  chart8.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
-  chart8.lines.dispatch.on("elementClick", function(e) { 
-	console.log(e);
-	//e.target.style.opacity = "10px";
-  });
-  //click the bar to check the value inside it
-  //chart.lineChart.dispatch.on("elementClick", function(e) {
-    //console.log(e.point.label);
-	//console.log(e.series.key);
-	//alert(window[e.point.label+e.series.key]);
-	//$("#pieDescOverview").css('visibility','hidden');
-	//$("#pieDesc").css('visibility','visible');
-	//$("#countryYear").html(e.point.label);
-	//$("#countryName").html(e.series.key);
-	
-   //findCountryTransportation(e.series.key+e.point.label);
-   
-	
-	//d3.select('#expenditureLineChart svg').call(chart2);
-	//$('.carousel').carousel(1);
-	//$('.carousel').carousel('pause');
- // });
-  
-	d3.selectAll(".nv-line").on("click", function (e) {
-		console.log(e);
-		
-	});
-  
-  return chart;
+    chart8.y3Axis
+        .tickFormat(d3.format(',f'));
+        
+    chart8.y2Axis
+        .tickFormat(function(d) { return d3.format(',.2f')(d) });
+
+    chart8.y4Axis
+        .tickFormat(function(d) { return d3.format(',.2f')(d) });
+      
+    chart8.bars.forceY([0]);
+    chart8.bars2.forceY([0]);
+    //chart.lines.forceY([0]);
+    //nv.log(indonesia);
+    d3.select('#chartExPerCapital svg')
+        .datum(Australia2)
+        .call(chart8);
+
+//    nv.utils.windowResize(chart.update);
+
+    return chart8;
 });
+
+$(".flag2").click(function(){
+	//d3.select("#chartExPerCapital svg").remove();
+	newMultiBar(window[this.id]);
+});
+
+function newMultiBar(country){
+	nv.addGraph(function() {
+     chart8 = nv.models.linePlusBarWithFocusChart()
+        .margin({top: 30, right: 60, bottom: 50, left: 70})
+        .x(function(d,i) { return i })
+        .color(d3.scale.category10().range());
+
+	chart8.xAxis.tickFormat(function(d) {
+
+      var dx = country[0].values[d] && country[0].values[d].x || 0;
+      if (dx > 0) {
+			return dx
+		  //return d3.time.format('%x')(new Date(dx))
+      }
+      return null;
+    });
+	
+    chart8.x2Axis.tickFormat(function(d) {
+      var dx = country[0].values[d] && country[0].values[d].x || 0;
+	    if (dx > 0) {
+	  return dx
+      //return d3.time.format('%x')(new Date(dx))
+	  }
+    });
+     
+    chart8.y1Axis
+        .tickFormat(d3.format(',f'));
+
+    chart8.y3Axis
+        .tickFormat(d3.format(',f'));
+        
+    chart8.y2Axis
+        .tickFormat(function(d) { return d3.format(',.2f')(d) });
+
+    chart8.y4Axis
+        .tickFormat(function(d) { return d3.format(',.2f')(d) });
+      
+    chart8.bars.forceY([0]);
+    chart8.bars2.forceY([0]);
+    //chart.lines.forceY([0]);
+    //nv.log(indonesia);
+    d3.select('#chartExPerCapital svg')
+        .datum(country)
+        .call(chart8);
+
+//    nv.utils.windowResize(chart.update);
+
+    return chart8;
+});
+};
+
 
 
 </script>
