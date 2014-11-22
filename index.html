@@ -31,7 +31,7 @@ text {
 }
 
 #chart1 svg {
-  height: 450px;
+  height: 400px;
 }
 
 #chart2 svg {
@@ -94,27 +94,27 @@ text {
 					</div>
 					 <!--<div class="offset1">The diagram shows the total number of visitors over the year</div> -->				
 					<div class="row">
-						<div class="span10">
+						<div class="span11">
 							<div class="row">
 								<div class="span5 offset1">
 									<h4>Number of Singapore visitors over 9 years (2005-2013), top 10</h4>
 								</div>
-								<div class="span10">
+								<div class="span11">
 								  <div id="chart1" class='with-3d-shadow with-transitions' style="margin-top:-5px;">
 									<svg></svg>
 								  </div>
 								</div>
 						  </div>
 						</div>
-						<div class="span10">
+						<div class="span11">
 						<div class="row">
 							<!--<h4>&nbsp;&nbsp;&nbsp;&nbsp;Expenditure in Singapore over 5 years</h4>	-->
 							<div class="span5 offset1">
 									<h4>Expenditure per capita of Singapore visitors over 9 years (2005-2013), top 10</h4>
 								</div>
-							<div class="span10">
+							<div class="span11">
 								<div id="expenditureLineChart" >
-									<svg style="height: 450px;"></svg>
+									<svg style="height: 400px;"></svg>
 								</div>
 							</div>
 						</div>
@@ -129,8 +129,8 @@ text {
 					
 							<div style="float:right;margin-right:50px;margin-top:-45px;" class="btn btn-link" id="revertBtn"><u>click here to revert</u></div>
 						
-						<div class="span16 offset3">
-						<!--	<div id="pieDesc" style="visibility:hidden"><h3 id="transportationMode"><span id="countryName"></span> visitor mode of transport over 5 years (2009 - 2013)</h3></div> -->
+						<div class="span16 offset1">
+						<!--	<div id="pieDesc" style="visibility:hidden"><h3 id="transportationMode"><span id="countryName"></span> visitor mode of transport over 5 years (2009 - 2013)</h3></div> 
 							<div class="container-fluid">
 							<div class="row">
 								<div class="span2 offset2">
@@ -173,6 +173,9 @@ text {
 								</div>
 							</div>
 							</div>
+							-->
+							
+								<svg id="countryMode" style="width:1400px;height:400px;margin-top:-20px;margin-left:100px;"></svg>
 							
 						</div>
 					</div>
@@ -264,6 +267,8 @@ text {
 <script src="js/lineChart.js"></script>
 <script src="js/historicalBar.js"></script>
 <script src="js/linePlusBarWithFocusChart.js"></script>
+<script src="js/stackedAreaChart.js"></script>
+<script src="js/stackedArea.js"></script>
 <!--<script src="js/linePlusBarWithFocusChartApplication.js"></script>-->
 <!--<script src="js/sequences.js"></script>-->
 <script>
@@ -604,8 +609,220 @@ nv.addGraph(function() {
 });
 
 
-function findCountryTransportation(id){
+var chart8;
+nv.addGraph(function() {
+     chart8 = nv.models.linePlusBarWithFocusChart()
+        .margin({top: 30, right: 60, bottom: 50, left: 70})
+        .x(function(d,i) { return i })
+        .color(d3.scale.category10().range());
+
+	chart8.xAxis.tickFormat(function(d) {
+
+      var dx = Australia2[0].values[d] && Australia2[0].values[d].x || 0;
+      if (dx > 0) {
+			return dx
+		  //return d3.time.format('%x')(new Date(dx))
+      }
+      return null;
+    });
+	
+    chart8.x2Axis.tickFormat(function(d) {
+      var dx = Australia2[0].values[d] && Australia2[0].values[d].x || 0;
+	    if (dx > 0) {
+	  return dx
+      //return d3.time.format('%x')(new Date(dx))
+	  }
+    });
+     
+    chart8.y1Axis
+        .tickFormat(d3.format(',f'));
+
+    chart8.y3Axis
+        .tickFormat(d3.format(',f'));
+        
+    chart8.y2Axis
+        .tickFormat(function(d) { return d3.format(',.2f')(d) });
+
+    chart8.y4Axis
+        .tickFormat(function(d) { return d3.format(',.2f')(d) });
+      
+    chart8.bars.forceY([0]);
+    chart8.bars2.forceY([0]);
+    //chart.lines.forceY([0]);
+    //nv.log(indonesia);
+    d3.select('#chartExPerCapital svg')
+        .datum(Australia2)
+        .call(chart8);
+
+//    nv.utils.windowResize(chart.update);
+
+    return chart8;
+});
+
+$(".flag2").click(function(){
+	//d3.select("#chartExPerCapital svg").remove();
+	newMultiBar(window[this.id]);
+});
+
+function newMultiBar(country){
 	nv.addGraph(function() {
+     chart8 = nv.models.linePlusBarWithFocusChart()
+        .margin({top: 30, right: 60, bottom: 50, left: 70})
+        .x(function(d,i) { return i })
+        .color(d3.scale.category10().range());
+
+	chart8.xAxis.tickFormat(function(d) {
+
+      var dx = country[0].values[d] && country[0].values[d].x || 0;
+      if (dx > 0) {
+			return dx
+		  //return d3.time.format('%x')(new Date(dx))
+      }
+      return null;
+    });
+	
+    chart8.x2Axis.tickFormat(function(d) {
+      var dx = country[0].values[d] && country[0].values[d].x || 0;
+	    if (dx > 0) {
+	  return dx
+      //return d3.time.format('%x')(new Date(dx))
+	  }
+    });
+     
+    chart8.y1Axis
+        .tickFormat(d3.format(',f'));
+
+    chart8.y3Axis
+        .tickFormat(d3.format(',f'));
+        
+    chart8.y2Axis
+        .tickFormat(function(d) { return d3.format(',.2f')(d) });
+
+    chart8.y4Axis
+        .tickFormat(function(d) { return d3.format(',.2f')(d) });
+      
+    chart8.bars.forceY([0]);
+    chart8.bars2.forceY([0]);
+    //chart.lines.forceY([0]);
+    //nv.log(indonesia);
+    d3.select('#chartExPerCapital svg')
+        .datum(country)
+        .call(chart8);
+
+//    nv.utils.windowResize(chart.update);
+
+    return chart8;
+});
+};
+
+
+//area chart
+var colors = d3.scale.category20();
+keyColor = function(d, i) {return colors(d.key)};
+
+var chart13;
+nv.addGraph(function() {
+  chart13 = nv.models.stackedAreaChart()
+               // .width(600).height(500)
+                .useInteractiveGuideline(true)
+                .x(function(d) { return d[0] })
+                .y(function(d) { return d[1] })
+                .color(keyColor)
+				.showControls(false)
+				.margin({left:175})
+                .transitionDuration(300);
+                //.clipEdge(true);
+
+// chart.stacked.scatter.clipVoronoi(false);
+
+  chart13.xAxis
+	  .axisLabel('Year')
+      .tickFormat(d3.format('d'));
+
+  chart13.yAxis
+	  .axisLabel('Population')
+      .tickFormat(d3.format(',.2f'));
+
+  d3.select('#countryMode')
+    .datum(modeAll)
+    .transition().duration(1000)
+    .call(chart13)
+    // .transition().duration(0)
+    .each('start', function() {
+        setTimeout(function() {
+            d3.selectAll('#countryMode *').each(function() {
+              //console.log('start',this.__transition__, this)
+              // while(this.__transition__)
+              if(this.__transition__)
+                this.__transition__.duration = 1;
+            })
+          }, 0)
+      })
+    // .each('end', function() {
+    //         d3.selectAll('#chart1 *').each(function() {
+    //           console.log('end', this.__transition__, this)
+    //           // while(this.__transition__)
+    //           if(this.__transition__)
+    //             this.__transition__.duration = 1;
+    //         })});
+
+  nv.utils.windowResize(chart13.update);
+
+  // chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+  return chart13;
+});
+
+$(".flag").click(function(){
+	//alert(this.id);
+	$('.flag').css('padding','4px');
+	$('.flag').css('background-color','#fff');
+	$('.flag').css('border','1px solid #ccc;');
+	$('.flag').css('border','1px solid rgba(0, 0, 0, 0.2)');
+	$('.flag').css('-webkit-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
+	$('.flag').css('-moz-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
+	$('.flag').css('box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
+	$('#pieDescOverview').html('<h3>'+this.id+' visitor mode of transport to Singapore over 9 years (2005-2013)</h3>');
+	$('#'+this.id).css('border','1px solid black');
+	$('#'+this.id).css('background-color','black');
+	findCountryTransportation(this.id);
+
+/**	$("#chartExpenditureBD").empty();
+	$("#legend").empty();
+	//$("#chartExpenditureBD").append("<svg></svg>");
+	
+	
+vis = d3.select("#chartExpenditureBD").append("svg:svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("svg:g")
+    .attr("id", "container")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+	
+	d3.text("csv/visit-sequences2.csv", function(text2) {
+	  var csv = d3.csv.parseRows(text2);
+	  var json = buildHierarchy(csv);
+	  createVisualization(json);
+	});
+**/
+});
+
+$("#revertBtn").click(function(){
+	$('.flag').css('padding','4px');
+	$('.flag').css('background-color','#fff');
+	$('.flag').css('border','1px solid #ccc;');
+	$('.flag').css('border','1px solid rgba(0, 0, 0, 0.2)');
+	$('.flag').css('-webkit-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
+	$('.flag').css('-moz-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
+	$('.flag').css('box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
+	$('#pieDescOverview').html('<h3>10 countries visitor mode of transport to Singapore over 9 years (2005 - 2013)</h3>');
+	findCountryTransportation('All');
+});
+
+
+function findCountryTransportation(id){
+/**	nv.addGraph(function() {
     var width = 200,
         height = 150;
 
@@ -739,161 +956,12 @@ function findCountryTransportation(id){
     //chart3.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
 
    // return chart3;
-});
+}); **/
+
+	d3.select("#countryMode")
+		.datum(window['mode'+id])
+		.call(chart13);
 }
-
-$(".flag").click(function(){
-	//alert(this.id);
-	$('.flag').css('padding','4px');
-	$('.flag').css('background-color','#fff');
-	$('.flag').css('border','1px solid #ccc;');
-	$('.flag').css('border','1px solid rgba(0, 0, 0, 0.2)');
-	$('.flag').css('-webkit-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
-	$('.flag').css('-moz-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
-	$('.flag').css('box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
-	$('#pieDescOverview').html('<h3>'+this.id+' visitor mode of transport to Singapore over 9 years (2005-2013)</h3>');
-	$('#'+this.id).css('border','1px solid black');
-	$('#'+this.id).css('background-color','black');
-	findCountryTransportation(this.id);
-
-/**	$("#chartExpenditureBD").empty();
-	$("#legend").empty();
-	//$("#chartExpenditureBD").append("<svg></svg>");
-	
-	
-vis = d3.select("#chartExpenditureBD").append("svg:svg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("svg:g")
-    .attr("id", "container")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-	
-	d3.text("csv/visit-sequences2.csv", function(text2) {
-	  var csv = d3.csv.parseRows(text2);
-	  var json = buildHierarchy(csv);
-	  createVisualization(json);
-	});
-**/
-});
-
-$("#revertBtn").click(function(){
-	$('.flag').css('padding','4px');
-	$('.flag').css('background-color','#fff');
-	$('.flag').css('border','1px solid #ccc;');
-	$('.flag').css('border','1px solid rgba(0, 0, 0, 0.2)');
-	$('.flag').css('-webkit-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
-	$('.flag').css('-moz-box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
-	$('.flag').css('box-shadow','0 1px 3px rgba(0, 0, 0, 0.1)');
-	$('#pieDescOverview').html('<h3>10 countries visitor mode of transport to Singapore over 9 years (2005 - 2013)</h3>');
-	findCountryTransportation('pie');
-});
-
-var chart8;
-nv.addGraph(function() {
-     chart8 = nv.models.linePlusBarWithFocusChart()
-        .margin({top: 30, right: 60, bottom: 50, left: 70})
-        .x(function(d,i) { return i })
-        .color(d3.scale.category10().range());
-
-	chart8.xAxis.tickFormat(function(d) {
-
-      var dx = Australia2[0].values[d] && Australia2[0].values[d].x || 0;
-      if (dx > 0) {
-			return dx
-		  //return d3.time.format('%x')(new Date(dx))
-      }
-      return null;
-    });
-	
-    chart8.x2Axis.tickFormat(function(d) {
-      var dx = Australia2[0].values[d] && Australia2[0].values[d].x || 0;
-	    if (dx > 0) {
-	  return dx
-      //return d3.time.format('%x')(new Date(dx))
-	  }
-    });
-     
-    chart8.y1Axis
-        .tickFormat(d3.format(',f'));
-
-    chart8.y3Axis
-        .tickFormat(d3.format(',f'));
-        
-    chart8.y2Axis
-        .tickFormat(function(d) { return d3.format(',.2f')(d) });
-
-    chart8.y4Axis
-        .tickFormat(function(d) { return d3.format(',.2f')(d) });
-      
-    chart8.bars.forceY([0]);
-    chart8.bars2.forceY([0]);
-    //chart.lines.forceY([0]);
-    //nv.log(indonesia);
-    d3.select('#chartExPerCapital svg')
-        .datum(Australia2)
-        .call(chart8);
-
-//    nv.utils.windowResize(chart.update);
-
-    return chart8;
-});
-
-$(".flag2").click(function(){
-	//d3.select("#chartExPerCapital svg").remove();
-	newMultiBar(window[this.id]);
-});
-
-function newMultiBar(country){
-	nv.addGraph(function() {
-     chart8 = nv.models.linePlusBarWithFocusChart()
-        .margin({top: 30, right: 60, bottom: 50, left: 70})
-        .x(function(d,i) { return i })
-        .color(d3.scale.category10().range());
-
-	chart8.xAxis.tickFormat(function(d) {
-
-      var dx = country[0].values[d] && country[0].values[d].x || 0;
-      if (dx > 0) {
-			return dx
-		  //return d3.time.format('%x')(new Date(dx))
-      }
-      return null;
-    });
-	
-    chart8.x2Axis.tickFormat(function(d) {
-      var dx = country[0].values[d] && country[0].values[d].x || 0;
-	    if (dx > 0) {
-	  return dx
-      //return d3.time.format('%x')(new Date(dx))
-	  }
-    });
-     
-    chart8.y1Axis
-        .tickFormat(d3.format(',f'));
-
-    chart8.y3Axis
-        .tickFormat(d3.format(',f'));
-        
-    chart8.y2Axis
-        .tickFormat(function(d) { return d3.format(',.2f')(d) });
-
-    chart8.y4Axis
-        .tickFormat(function(d) { return d3.format(',.2f')(d) });
-      
-    chart8.bars.forceY([0]);
-    chart8.bars2.forceY([0]);
-    //chart.lines.forceY([0]);
-    //nv.log(indonesia);
-    d3.select('#chartExPerCapital svg')
-        .datum(country)
-        .call(chart8);
-
-//    nv.utils.windowResize(chart.update);
-
-    return chart8;
-});
-};
 
 
 
